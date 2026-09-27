@@ -1,0 +1,152 @@
+[
+  {
+    "id": "jollof-rice",
+    "name": "Jollof Rice",
+    "country": "Nigeria",
+    "category": "rice",
+    "photo": "🍚",
+    "timeMinutes": 60,
+    "difficulty": "Medium",
+    "dietaryTags": ["Gluten-free", "Dairy-free"],
+    "blurb": "The beloved party rice of Nigeria and Ghana — smoky, tomato-rich, and always at the centre of celebrations, Sundays, and friendly debates about who makes it best.",
+    "keyIngredients": ["Long-grain rice", "Tomatoes", "Red bell peppers", "Smoked paprika"],
+    "ingredients": [
+      { "name": "Long-grain parboiled rice", "metric": "500 g", "cups": "2½ cups", "substitution": "Basmati in a pinch", "substitutionImpact": "Less smoky absorption; grains break more easily — still tasty." },
+      { "name": "Fresh tomatoes", "metric": "400 g", "cups": "about 4 medium", "substitution": "400 g tinned chopped tomatoes", "substitutionImpact": "Slightly less fresh sweetness; add a pinch of sugar." },
+      { "name": "Red bell peppers", "metric": "2 large", "cups": "2 large", "substitution": "Tatashe if you can find it", "substitutionImpact": "Tatashe gives the classic colour and mild heat." },
+      { "name": "Scotch bonnet", "metric": "1", "cups": "1", "substitution": "Habanero or ½ tsp chilli flakes", "substitutionImpact": "Similar heat; habanero is a touch fruitier." },
+      { "name": "Tomato paste", "metric": "70 g", "cups": "5 tbsp", "substitution": null, "substitutionImpact": null },
+      { "name": "Chicken stock", "metric": "750 ml", "cups": "3 cups", "substitution": "Vegetable stock + 1 tsp smoked paprika", "substitutionImpact": "Loses some depth; paprika brings back smokiness. Makes it vegetarian." }
+    ],
+    "steps": [
+      { "text": "Blend tomatoes, bell peppers, scotch bonnet and half an onion until smooth.", "minutes": 10, "why": null },
+      { "text": "Fry sliced onion and tomato paste in oil until the paste darkens and tastes sweet.", "minutes": 8, "why": "Frying off the raw edge of tomato paste is what gives party-style depth." },
+      { "text": "Add the blended mix and simmer until thick and the oil rises to the top.", "minutes": 15, "why": "Thickening now means fluffy, separate grains later — watery sauce makes soggy rice." },
+      { "text": "Stir in stock, thyme, bay leaf and salt. Bring to a boil, then add rinsed rice.", "minutes": 5, "why": null },
+      { "text": "Cover tightly with foil + lid and cook on low until rice is tender.", "minutes": 25, "why": "Trapped steam does the cooking — resist peeking for the first 15 minutes." }
+    ],
+    "pairings": ["egusi-soup", "puff-puff", "groundnut-stew"]
+  },
+  {
+    "id": "egusi-soup",
+    "name": "Egusi Soup",
+    "country": "Nigeria",
+    "category": "soups",
+    "photo": "🍲",
+    "timeMinutes": 50,
+    "difficulty": "Medium",
+    "dietaryTags": ["Gluten-free", "High-protein"],
+    "blurb": "A hearty melon-seed soup eaten across Nigeria — nutty, rich, and made for scooping with swallow. A Sunday staple in many homes.",
+    "keyIngredients": ["Egusi (melon seeds)", "Spinach", "Palm oil", "Smoked fish"],
+    "ingredients": [
+      { "name": "Ground egusi (melon seeds)", "metric": "200 g", "cups": "1½ cups", "substitution": "Ground pumpkin seeds", "substitutionImpact": "Close in texture; slightly milder and less nutty." },
+      { "name": "Palm oil", "metric": "120 ml", "cups": "½ cup", "substitution": "Neutral oil + 1 tsp smoked paprika", "substitutionImpact": "Loses the signature colour and earthy flavour — honest downgrade." },
+      { "name": "Spinach or bitter leaf", "metric": "300 g", "cups": "6 cups", "substitution": "Kale, chopped small", "substitutionImpact": "Chewier; simmer 5 minutes longer." },
+      { "name": "Smoked mackerel", "metric": "1 whole", "cups": "about 300 g", "substitution": "Smoked turkey or mushrooms (veg)", "substitutionImpact": "Mushrooms keep it savoury but lose the smoky-fish depth." },
+      { "name": "Stock", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+    ],
+    "steps": [
+      { "text": "Mix ground egusi with a splash of water into a thick paste; set aside.", "minutes": 5, "why": null },
+      { "text": "Heat palm oil, fry onion, then add stock and bring to a simmer.", "minutes": 8, "why": null },
+      { "text": "Scoop in egusi paste in lumps and simmer without stirring.", "minutes": 12, "why": "Leaving it alone lets the egusi set into lovely crumbs instead of mush." },
+      { "text": "Stir gently, add fish, greens and seasoning. Simmer until greens are tender.", "minutes": 15, "why": null }
+    ],
+    "pairings": ["fufu", "jollof-rice"]
+  },
+  {
+    "id": "fufu",
+    "name": "Fufu",
+    "country": "Ghana",
+    "category": "swallow",
+    "photo": "🍙",
+    "timeMinutes": 30,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Gluten-free"],
+    "blurb": "Soft, stretchy swallow pounded from cassava and plantain — the scoop you use for soups like egusi and groundnut stew. Eaten daily across Ghana, Nigeria and beyond.",
+    "keyIngredients": ["Cassava", "Plantain", "Water"],
+    "ingredients": [
+      { "name": "Cassava flour (or fufu flour)", "metric": "250 g", "cups": "2 cups", "substitution": "Instant fufu flour", "substitutionImpact": "Less stretch, much easier — a fair trade on busy days." },
+      { "name": "Water", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+    ],
+    "steps": [
+      { "text": "Bring water to a boil, then whisk in the flour a little at a time.", "minutes": 5, "why": null },
+      { "text": "Stir vigorously with a wooden spoon until smooth and stretchy.", "minutes": 10, "why": "Elbow grease now is what gives fufu its pull — keep turning, don't stop." },
+      { "text": "Wet your hands, shape into balls and serve warm with soup.", "minutes": 5, "why": null }
+    ],
+    "pairings": ["egusi-soup", "groundnut-stew"]
+  },
+  {
+    "id": "waakye",
+    "name": "Waakye",
+    "country": "Ghana",
+    "category": "rice",
+    "photo": "🍛",
+    "timeMinutes": 75,
+    "difficulty": "Medium",
+    "dietaryTags": ["Vegan option", "High-protein"],
+    "blurb": "Ghana's famous rice-and-beans, cooked with sorghum leaves for its brick-red colour. A classic street breakfast wrapped in banana leaves with all the extras.",
+    "keyIngredients": ["Rice", "Black-eyed beans", "Sorghum leaves", "Spaghetti"],
+    "ingredients": [
+      { "name": "Black-eyed beans", "metric": "250 g", "cups": "1½ cups", "substitution": "Tinned black-eyed beans (drained)", "substitutionImpact": "Softer; skip the pre-boil and shorten cooking by ~20 min." },
+      { "name": "Rice", "metric": "400 g", "cups": "2 cups", "substitution": null, "substitutionImpact": null },
+      { "name": "Dried sorghum (waakye) leaves", "metric": "4 leaves", "cups": "4 leaves", "substitution": "1 tsp baking soda for colour only", "substitutionImpact": "You get a brownish tint, not the classic red — flavour mostly unchanged." },
+      { "name": "Spaghetti (optional, for serving)", "metric": "100 g", "cups": "1 handful", "substitution": null, "substitutionImpact": null }
+    ],
+    "steps": [
+      { "text": "Boil beans with sorghum leaves until almost tender.", "minutes": 30, "why": null },
+      { "text": "Remove leaves, add rice, salt and water. Cover and cook on low.", "minutes": 25, "why": "Beans need a head start or the rice turns to mush before they soften." },
+      { "text": "Rest 10 minutes, fluff, and serve with extras (egg, shito, spaghetti).", "minutes": 10, "why": null }
+    ],
+    "pairings": ["puff-puff", "jollof-rice"]
+  },
+  {
+    "id": "puff-puff",
+    "name": "Puff-Puff",
+    "country": "Nigeria",
+    "category": "snacks",
+    "photo": "🍩",
+    "timeMinutes": 90,
+    "difficulty": "Easy",
+    "dietaryTags": ["Vegan", "Vegetarian"],
+    "blurb": "Golden, pillowy fried dough balls — the snack of every Nigerian party and street corner. Best eaten warm, standing up, with friends.",
+    "keyIngredients": ["Flour", "Yeast", "Sugar", "Nutmeg"],
+    "ingredients": [
+      { "name": "Plain flour", "metric": "500 g", "cups": "4 cups", "substitution": null, "substitutionImpact": null },
+      { "name": "Instant yeast", "metric": "7 g", "cups": "2¼ tsp", "substitution": null, "substitutionImpact": null },
+      { "name": "Sugar", "metric": "100 g", "cups": "½ cup", "substitution": null, "substitutionImpact": null },
+      { "name": "Ground nutmeg", "metric": "1 tsp", "cups": "1 tsp", "substitution": "Vanilla + pinch of cinnamon", "substitutionImpact": "Less traditional warmth; still sweet and lovely." },
+      { "name": "Warm water", "metric": "450 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+    ],
+    "steps": [
+      { "text": "Mix everything into a thick batter. Cover and proof until doubled and bubbly.", "minutes": 60, "why": "A full, bubbly rise is what makes them hollow-light instead of dense." },
+      { "text": "Heat oil to 170–175°C. Scoop batter with oiled hands or a spoon.", "minutes": 10, "why": null },
+      { "text": "Fry in batches, turning, until deep golden all over. Drain on paper.", "minutes": 15, "why": "Crowding the pot drops the oil temperature and makes them greasy." }
+    ],
+    "pairings": ["jollof-rice", "waakye"]
+  },
+  {
+    "id": "groundnut-stew",
+    "name": "Groundnut Stew",
+    "country": "Senegal",
+    "category": "soups",
+    "photo": "🥜",
+    "timeMinutes": 55,
+    "difficulty": "Easy",
+    "dietaryTags": ["Gluten-free", "Dairy-free"],
+    "blurb": "Known as mafé across Senegal and Mali — a comforting peanut stew, gently sweet and savoury, eaten with rice or fufu on family evenings.",
+    "keyIngredients": ["Peanuts", "Tomatoes", "Chicken", "Root vegetables"],
+    "ingredients": [
+      { "name": "Natural peanut butter (no sugar)", "metric": "200 g", "cups": "¾ cup", "substitution": "Blitzed roasted peanuts", "substitutionImpact": "Grainier texture, deeper roast flavour — very good." },
+      { "name": "Chicken pieces", "metric": "700 g", "cups": "about 8 pieces", "substitution": "Sweet potato + chickpeas (veg)", "substitutionImpact": "Lighter but still hearty; add an extra spoon of peanut butter." },
+      { "name": "Tomato paste", "metric": "70 g", "cups": "5 tbsp", "substitution": null, "substitutionImpact": null },
+      { "name": "Carrots & sweet potato", "metric": "400 g", "cups": "3 cups chopped", "substitution": "Pumpkin or butternut", "substitutionImpact": "Sweeter and softer — lovely, just watch the simmer time." },
+      { "name": "Stock", "metric": "1 litre", "cups": "4 cups", "substitution": null, "substitutionImpact": null }
+    ],
+    "steps": [
+      { "text": "Brown the chicken in oil; set aside.", "minutes": 10, "why": null },
+      { "text": "Fry onion and tomato paste, then whisk in stock and peanut butter until smooth.", "minutes": 10, "why": "Whisking bit by bit stops the peanut splitting later." },
+      { "text": "Return chicken plus vegetables. Simmer until tender and oil glistens on top.", "minutes": 30, "why": null }
+    ],
+    "pairings": ["fufu", "jollof-rice"]
+  }
+]

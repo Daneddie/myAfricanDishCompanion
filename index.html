@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyAfricanDishCompanion</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <div class="wrap header-inner">
+    <div>
+      <h1>🍲 MyAfricanDishCompanion</h1>
+      <p class="tagline">Like a knowledgeable relative guiding you through the kitchen.</p>
+    </div>
+    <nav>
+      <button data-view="browse" class="nav-btn active">Browse</button>
+      <button data-view="cookbook" class="nav-btn">My Cookbook <span id="favCount"></span></button>
+      <button data-view="shopping" class="nav-btn">Shopping List <span id="shopCount"></span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- BROWSE -->
+  <section id="view-browse">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search dish or ingredient… e.g. jollof, peanut" />
+      <select id="categoryFilter">
+        <option value="">All categories</option>
+        <option value="soups">Soups</option>
+        <option value="rice">Rice</option>
+        <option value="swallow">Swallow</option>
+        <option value="snacks">Snacks</option>
+      </select>
+      <select id="countryFilter"><option value="">All countries</option></select>
+      <div class="units">
+        <label><input type="radio" name="units" value="metric" checked /> Metric</label>
+        <label><input type="radio" name="units" value="cups" /> Cups/spoons</label>
+      </div>
+    </div>
+    <div id="dishGrid" class="grid"></div>
+  </section>
+
+  <!-- DETAIL -->
+  <section id="view-detail" hidden>
+    <button class="link" id="backBtn">← Back to browsing</button>
+    <div id="detail"></div>
+  </section>
+
+  <!-- COOKING MODE -->
+  <section id="view-cooking" hidden>
+    <button class="link" id="exitCookingBtn">← Exit cooking mode</button>
+    <div id="cooking" class="cooking-card"></div>
+  </section>
+
+  <!-- COOKBOOK -->
+  <section id="view-cookbook" hidden>
+    <h2>My Cookbook</h2>
+    <p class="muted">Your saved favourites and dishes you've cooked.</p>
+    <h3>❤️ Favourites</h3>
+    <div id="favGrid" class="grid"></div>
+    <h3>🍳 Cooked</h3>
+    <ul id="cookedList"></ul>
+  </section>
+
+  <!-- SHOPPING -->
+  <section id="view-shopping" hidden>
+    <h2>Shopping List</h2>
+    <p class="muted">Tick dishes below, or add from any dish page. The list combines ingredients automatically.</p>
+    <div id="shopPicker"></div>
+    <ul id="shopList"></ul>
+    <button id="clearShop">Clear list</button>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <small>MyAfricanDishCompanion v0.1 — West African dishes to start, expanding region by region. 💛</small>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

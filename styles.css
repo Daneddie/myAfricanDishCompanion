@@ -1,0 +1,59 @@
+:root {
+  --bg: #fff8f0;
+  --card: #ffffff;
+  --ink: #3a2a1a;
+  --muted: #8a7460;
+  --accent: #c2571b;
+  --accent-soft: #fbe3c8;
+  --line: #ecdcc6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 1rem; }
+header { background: #2e1f12; color: #ffe9cf; padding: 1.2rem 0; }
+header h1 { margin: 0; font-size: 1.5rem; }
+.tagline { margin: 0.2rem 0 0; color: #d9b98f; font-style: italic; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+nav { display: flex; gap: 0.5rem; }
+.nav-btn {
+  border: 1px solid #6b4c2e; background: transparent; color: #ffe9cf;
+  padding: 0.45rem 0.8rem; border-radius: 999px; cursor: pointer;
+}
+.nav-btn.active, .nav-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.controls { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.2rem 0; align-items: center; }
+.controls input[type="search"], .controls select {
+  padding: 0.55rem 0.7rem; border-radius: 10px; border: 1px solid var(--line); font-size: 1rem;
+}
+.units { margin-left: auto; display: flex; gap: 0.8rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1rem; cursor: pointer; transition: transform 0.1s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.card .photo { font-size: 2.6rem; }
+.card h3 { margin: 0.4rem 0; }
+.meta { display: flex; gap: 0.4rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); }
+.pill { background: var(--accent-soft); border-radius: 999px; padding: 0.15rem 0.55rem; }
+.blurb { font-style: italic; color: #5d4a36; }
+button { font-family: inherit; }
+.btn {
+  background: var(--accent); color: #fff; border: none; border-radius: 10px;
+  padding: 0.55rem 0.9rem; cursor: pointer; margin-right: 0.5rem; margin-top: 0.5rem;
+}
+.btn.secondary { background: #6b4c2e; }
+.link { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 1rem; margin: 1rem 0; }
+.muted { color: var(--muted); }
+.detail-photo { font-size: 4rem; }
+.steps li { margin-bottom: 0.7rem; }
+.why { display: block; background: #fdf3e3; border-left: 3px solid var(--accent); padding: 0.35rem 0.6rem; margin-top: 0.3rem; font-size: 0.92rem; }
+.sub { color: var(--muted); font-size: 0.9rem; }
+.cooking-card { background: var(--card); border: 2px solid var(--accent); border-radius: 16px; padding: 2rem; text-align: center; margin-top: 1rem; }
+.cooking-card .step { font-size: 1.4rem; line-height: 1.5; }
+.cook-nav { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+ul#shopList, ul#cookedList { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.5rem; }
+#shopPicker label { display: block; margin: 0.3rem 0; }
+footer { margin: 2rem 0; color: var(--muted); text-align: center; }
