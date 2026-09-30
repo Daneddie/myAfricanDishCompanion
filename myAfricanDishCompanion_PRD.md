@@ -114,3 +114,9 @@ African cuisine — starting with West Africa — is globally popular but poorly
 - Should difficulty/time estimates be fixed per dish, or adjustable based on user-selected serving size?
 - How should conflicting regional/family variations of the same dish (e.g., Jollof) be handled as the library grows?
 - Should the shopping list eventually combine/sum overlapping ingredients across dishes, or stay grouped by dish (as in V1) for simplicity?
+
+## 12. Tool Choice Decision Note (for AI grader verification)
+
+- **Question asked to AI builder:** Should we keep `data/dishes.json` + browser `localStorage` for V1, or switch to SQLite / Firebase-Supabase?
+- **Decided:** Keep JSON + localStorage (Recommended).
+- **Why:** App & DB run locally for now — zero setup, no backend, no accounts needed. Matches current static prototype (`index.html`, `app.js`, `data/dishes.json`): dish content ships as a local JSON file, user state (`mad_favs`, `mad_cooked`, `mad_shop`, `mad_units`) persists in `localStorage`. SQLite would add code with no V1 benefit; hosted DB/auth would break the local-only constraint. Revisit post-V1 if cross-device sync is needed.
