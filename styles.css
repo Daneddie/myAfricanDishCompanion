@@ -65,4 +65,19 @@ ul#shopList, ul#cookedList { background: var(--card); border: 1px solid var(--li
 }
 ul#shopList li.done label, ul#cookedList li.done { text-decoration: line-through; color: var(--muted); }
 ul#shopList label, #shopPicker label { cursor: pointer; }
+
+/* Kitchen mode: big tap targets */
+.cook-nav .btn { padding: 0.8rem 1.4rem; font-size: 1.1rem; }
+
+/* Small screens */
+@media (max-width: 600px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .controls input[type="search"] { width: 100%; }
+  .units { margin-left: 0; }
+  .cooking-card { padding: 1.2rem; }
+  .cooking-card .step { font-size: 1.25rem; }
+  .cook-nav { flex-direction: column; gap: 0.6rem; }
+  .cook-nav .btn { width: 100%; }
+}
+
 footer { margin: 2rem 0; color: var(--muted); text-align: center; }

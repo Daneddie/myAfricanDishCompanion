@@ -4,50 +4,44 @@ A warm, homely kitchen companion for West African cooking — like a knowledgeab
 
 Starting with **West African dishes**, expanding region by region later.
 
-## What it does (v1 scope)
+**Status:** V1 complete (Phases 1–6) — static prototype, no build step, no backend.
+
+## What it does (V1 scope)
 
 - **Scope & Discovery**
-  - Browse by category (soups, rice, swallow, snacks) or by country of origin
-  - Search by dish name or ingredient
+  - Browse by category (Rice Dishes, Soups & Stews, Swallow, Snacks & Small Chops) or by country of origin
+  - Search by dish name or ingredient, with result counts and friendly empty states
 - **Dish Information**
-  - Photo of the finished dish + key ingredients on each dish card
-  - Time, difficulty level, and dietary tags visible at a glance
+  - Photo of the finished dish + key-ingredient visuals on each dish card
+  - Prep/cook time, difficulty level, and dietary tags visible at a glance
   - Short cultural / origin blurb per dish (when it's eaten, where it's from)
 - **Ingredients**
-  - Metric **or** cups/spoons measurement toggle
-  - Substitution notes for hard-to-find ingredients, with honest notes on taste/texture impact
+  - Metric **or** cups/spoons measurement toggle (persisted)
+  - Servings shown per dish; substitution notes with honest taste/texture impact on every swap
 - **Cooking Instructions**
   - Numbered steps with time estimates and occasional "why" tips
-  - Full readable view + a focused **Start Cooking** step-by-step mode
+  - Full readable view + a focused **Start Cooking** step-by-step mode (large text, progress bar, next/back, keyboard ←/→, Esc to exit, progress saved per dish with resume)
 - **Meal Planning**
-  - "Goes well with" pairing suggestions linking to other dishes
-  - Auto-generated shopping list from one or more selected dishes
+  - "Goes well with" pairing suggestions (2–3 valid links per dish) + one-tap "Add meal" to shopping list
+  - Shopping list grouped by dish, tick-off while shopping (persisted), clear list
 - **Personalization**
-  - Save favorites to a personal cookbook
-  - "Cooked this" tracking
+  - Save favorites to a personal cookbook (with counts)
+  - "Cooked this" tracking with inline confirmation (no popups)
 
-## This initial version (v0.1)
+## Dishes (14)
 
-A dependency-free static prototype — no build step, no backend. Open it and cook.
-
-- `index.html` — app shell (browse, search, dish detail, cooking mode, shopping list, cookbook)
-- `styles.css` — warm, homely styling
-- `app.js` — all client logic (filtering, units toggle, cooking mode, pairings, shopping list, favorites + cooked tracking via `localStorage`)
-- `data/dishes.json` — 14 starter West African dishes with full fields per the spec (schema: prep/cook minutes, servings, country flag, dietary tags + adaptation note, key ingredients with photos, ingredients with honest substitutions, timed steps with "why" tips, 2–3 pairings)
-- Dishes: Jollof Rice, Egusi Soup, Efo Riro (Nigeria); Fufu, Waakye, Banku, Kelewele (Ghana); Groundnut Stew (Mafé), Thiéboudienne, Chicken Yassa, Fataya (Senegal); plus Puff-Puff, Akara, Pounded Yam
-
-Favorites, cooked history, shopping list, and unit preference persist in `localStorage`.
+Nigeria (6): Jollof Rice, Egusi Soup, Efo Riro, Puff-Puff, Akara, Pounded Yam.
+Ghana (4): Fufu, Waakye, Banku, Kelewele.
+Senegal (4): Groundnut Stew (Mafé), Thiéboudienne, Chicken Yassa, Fataya.
 
 ## Getting started
 
-No installation needed. Either:
+No installation needed. Serve the folder (required so dish data loads):
 
-1. Open `index.html` directly in a browser, **or**
-2. Serve the folder (recommended, so `fetch` of `data/dishes.json` works everywhere):
-   ```bash
-   python -m http.server 8000
-   # then visit http://localhost:8000
-   ```
+```bash
+python -m http.server 8000
+# then visit http://localhost:8000
+```
 
 ## Project structure
 
@@ -58,18 +52,44 @@ MyAfricanDishCompanion/
 ├── app.js
 ├── data/
 │   └── dishes.json
-├── myAfricanDishCompanion.docx   # original feature definition
+├── assets/
+│   ├── PHOTOS_NEEDED.md   # shot list: 14 dishes + 37 ingredient visuals
+│   ├── dishes/            # drop finished-dish JPGs here
+│   └── ingredients/       # drop shared ingredient JPGs here
 ├── README.md
+├── PRD.md
+├── myAfricanDishCompanion_PRD.md
+├── myAfricanDishCompanion.md
+├── IMPLEMENTATION_PLAN.md
 └── .env.example
 ```
 
-## Roadmap
+## Privacy: everything stays local
 
-- More West African dishes, then region-by-region expansion (East, Central, Southern, North Africa)
-- Real dish photography
+No accounts, no tracking, no network calls except loading `data/dishes.json`.
+All user state lives in `localStorage`: `mad_favs`, `mad_cooked`, `mad_shop`,
+`mad_checked`, `mad_cookindex`, `mad_units`, plus local-only usage counters
+`mad_metrics` (`cookOpens`, `cookCompletes`, `favAdds`, `searches`).
+
+## QA checklist (passes)
+
+- [x] All 14 dishes validate against the frozen schema; all pairings resolve
+- [x] Category + country filters compose; "plantain" search works
+- [x] Cards show name, flag, prep/cook, difficulty, tags; counts + empty states
+- [x] Detail: servings, units toggle, paired substitutions, adaptation notes
+- [x] Discover → Cook works end to end; progress persists + resumes; keyboard nav
+- [x] Plan-a-meal (dish + pairings → grouped tick-off list) and return-visit flows
+- [x] Mobile layout (stacked header, full-width cook buttons); fetch fallback message
+- [x] Cultural-accuracy review: no origin claims on contested dishes (e.g. jollof);
+  "national dish" used only for Thiéboudienne; V1 keeps fixed time/difficulty and
+  grouped (not summed) shopping list per PRD §11
+
+## Roadmap (post-V1)
+
+- Real dish photography (`assets/PHOTOS_NEEDED.md` is the shot list)
+- More West African dishes, then region-by-region expansion
 - Backend + accounts so cookbook syncs across devices
-- Printable shopping lists / shareable meal plans
-- Dietary filters (vegan, gluten-free) and scaled servings
+- Summed shopping lists, Cook With What You Have, meal planner
 
 ## Tone
 

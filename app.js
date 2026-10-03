@@ -8,6 +8,7 @@ let state = {
   shoppingDishes: JSON.parse(localStorage.getItem('mad_shop') || '[]'),
   checkedItems: JSON.parse(localStorage.getItem('mad_checked') || '[]'),
   cookProgress: JSON.parse(localStorage.getItem('mad_cookindex') || '{}'),
+  metrics: JSON.parse(localStorage.getItem('mad_metrics') || '{"cookOpens":0,"cookCompletes":0,"favAdds":0,"searches":0}'),
   currentDish: null,
   cookIndex: 0,
 };
@@ -26,9 +27,12 @@ function showToast(msg) {
 async function load() {
   try {
     const res = await fetch('data/dishes.json');
-    DISHES = await res.json();
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (!Array.isArray(data) || !data.length) throw new Error('bad shape');
+    DISHES = data;
   } catch (e) {
-    $('dishGrid').innerHTML = '<p>Could not load dishes. Please serve via <code>python -m http.server</code>.</p>';
+    $('dishGrid').innerHTML = '<p>Could not load dishes. Please serve via <code>python -m http.server</code> (opening index.html directly blocks data loading in some browsers).</p>';
     return;
   }
   initCountries();
@@ -43,7 +47,13 @@ function save() {
   localStorage.setItem('mad_shop', JSON.stringify(state.shoppingDishes));
   localStorage.setItem('mad_checked', JSON.stringify(state.checkedItems));
   localStorage.setItem('mad_cookindex', JSON.stringify(state.cookProgress));
+  localStorage.setItem('mad_metrics', JSON.stringify(state.metrics));
   localStorage.setItem('mad_units', state.units);
+}
+
+function bumpMetric(key) {
+  state.metrics[key] = (state.metrics[key] || 0) + 1;
+  try { localStorage.setItem('mad_metrics', JSON.stringify(state.metrics)); } catch (e) { /* private mode */ }
 }
 
 function initCountries() {
@@ -66,7 +76,14 @@ function bindEvents() {
   document.querySelectorAll('.nav-btn').forEach((b) =>
     b.addEventListener('click', () => showView(b.dataset.view))
   );
-  $('search').addEventListener('input', renderGrid);
+  let searchTimer = null;
+  $('search').addEventListener('input', () => {
+    renderGrid();
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      if ($('search').value.trim().length > 1) bumpMetric('searches');
+    }, 1000);
+  });
   $('categoryFilter').addEventListener('change', renderGrid);
   $('countryFilter').addEventListener('change', renderGrid);
   document.querySelectorAll('input[name="units"]').forEach((r) =>
@@ -78,6 +95,12 @@ function bindEvents() {
   );
   $('backBtn').addEventListener('click', () => showView('browse'));
   $('exitCookingBtn').addEventListener('click', () => showDetail(state.currentDish));
+  document.addEventListener('keydown', (e) => {
+    if (state.view !== 'cooking') return;
+    if (e.key === 'ArrowRight') { const n = $('nextStep'); if (n) n.click(); }
+    else if (e.key === 'ArrowLeft') { const p = $('prevStep'); if (p && !p.disabled) p.click(); }
+    else if (e.key === 'Escape') { showDetail(state.currentDish); }
+  });
   $('clearShop').addEventListener('click', () => {
     state.shoppingDishes = []; state.checkedItems = []; save(); renderAll();
   });
@@ -213,9 +236,11 @@ function renderDetail(id) {
 }
 
 function toggleFav(id) {
-  state.favorites = state.favorites.includes(id)
-    ? state.favorites.filter((x) => x !== id)
-    : [...state.favorites, id];
+  const adding = !state.favorites.includes(id);
+  state.favorites = adding
+    ? [...state.favorites, id]
+    : state.favorites.filter((x) => x !== id);
+  if (adding) bumpMetric('favAdds');
   save(); renderAll(); renderDetail(id);
 }
 
@@ -272,6 +297,7 @@ function startCooking(id) {
   const d = DISHES.find((x) => x.id === id);
   const saved = state.cookProgress[id];
   state.cookIndex = (Number.isInteger(saved) && d && saved >= 0 && saved < d.steps.length) ? saved : 0;
+  bumpMetric('cookOpens');
   renderCooking();
   showView('cooking');
 }
@@ -304,7 +330,7 @@ function renderCooking() {
   const prev = $('prevStep'), next = $('nextStep'), fin = $('finishCook');
   if (prev) prev.addEventListener('click', () => setCookIndex(d.id, state.cookIndex - 1));
   if (next) next.addEventListener('click', () => setCookIndex(d.id, state.cookIndex + 1));
-  if (fin) fin.addEventListener('click', () => { markCooked(d.id); showDetail(d.id); });
+  if (fin) fin.addEventListener('click', () => { bumpMetric('cookCompletes'); markCooked(d.id); showDetail(d.id); });
   $('restartCook').addEventListener('click', () => setCookIndex(d.id, 0));
 }
 
