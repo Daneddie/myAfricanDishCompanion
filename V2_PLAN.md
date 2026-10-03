@@ -7,7 +7,7 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 ## Stack lock (V2)
 
 - **Frontend:** same app, deployed on **Cloudflare Pages** (free, CDN, pairs with R2).
-- **Backend:** Node API (Hono or Express) hosting auth + dish/user-state endpoints.
+- **Backend:** Node.js API with Express, hosting auth + dish/user-state endpoints.
   Host on Render / Fly.io / Railway (pick one at build time; all have free/low tiers).
 - **Auth:** **Better Auth** (self-hosted) — email/password first, social/passkeys later.
   Sessions in Postgres via Better Auth's schema.
@@ -83,6 +83,6 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 ## Open decisions (resolve at build time)
 
 1. Backend host: Render vs Fly.io vs Railway.
-2. Node framework: Hono vs Express.
+2. ~~Node framework: Hono vs Express.~~ Decided: **Node.js + Express**.
 3. Social login providers (post-B1): Google first?
 4. R2 layout: one bucket + prefixes vs two buckets.
