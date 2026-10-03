@@ -172,7 +172,7 @@ function renderDetail(id) {
     <p class="blurb">${d.blurb}</p>
     ${d.adaptationNote ? `<p class="why">🌱 ${d.adaptationNote}</p>` : ''}
     <p class="muted">Key ingredients: ${(d.keyIngredients || []).map((k) => (typeof k === 'string' ? k : `${k.photo ? k.photo + ' ' : ''}${k.name}`)).join(' · ')}</p>
-    <h3>Ingredients (${state.units === 'metric' ? 'metric' : 'cups/spoons'})</h3>
+    <h3>Ingredients for ${d.servingsDefault} servings (${state.units === 'metric' ? 'metric' : 'cups/spoons'})</h3>
     <ul>${d.ingredients.map((i) => `
       <li><strong>${i.name}</strong> — ${unitQty(i)}
       ${i.substitution ? `<br/><span class="sub">Swap: ${i.substitution}. Honest note: ${i.substitutionImpact}</span>` : ''}
