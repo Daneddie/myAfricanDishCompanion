@@ -6,11 +6,21 @@ let state = {
   favorites: JSON.parse(localStorage.getItem('mad_favs') || '[]'),
   cooked: JSON.parse(localStorage.getItem('mad_cooked') || '[]'),
   shoppingDishes: JSON.parse(localStorage.getItem('mad_shop') || '[]'),
+  cookProgress: JSON.parse(localStorage.getItem('mad_cookindex') || '{}'),
   currentDish: null,
   cookIndex: 0,
 };
 
 const $ = (id) => document.getElementById(id);
+
+let toastTimer = null;
+function showToast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { t.hidden = true; }, 3500);
+}
 
 async function load() {
   try {
@@ -30,6 +40,7 @@ function save() {
   localStorage.setItem('mad_favs', JSON.stringify(state.favorites));
   localStorage.setItem('mad_cooked', JSON.stringify(state.cooked));
   localStorage.setItem('mad_shop', JSON.stringify(state.shoppingDishes));
+  localStorage.setItem('mad_cookindex', JSON.stringify(state.cookProgress));
   localStorage.setItem('mad_units', state.units);
 }
 
@@ -183,7 +194,7 @@ function renderDetail(id) {
       ${s.why ? `<span class="why">💡 Why: ${s.why}</span>` : ''}</li>`).join('')}</ol>
     <h3>Goes well with</h3>
     <p>${pairLinks || '—'}</p>
-    <button class="btn" id="startCooking">▶ Start Cooking</button>
+    <button class="btn" id="startCooking">${Number.isInteger(state.cookProgress[d.id]) && state.cookProgress[d.id] > 0 ? `▶ Resume cooking (step ${state.cookProgress[d.id] + 1})` : '▶ Start Cooking'}</button>
     <button class="btn secondary" id="favBtn">${isFav ? '💔 Remove from cookbook' : '❤️ Save to cookbook'}</button>
     <button class="btn secondary" id="shopBtn">${inShop ? '✓ In shopping list' : '+ Add to shopping list'}</button>
     <button class="btn secondary" id="cookedBtn">🍳 I cooked this</button>
@@ -212,24 +223,40 @@ function toggleShop(id) {
 }
 
 function markCooked(id) {
-  if (!state.cooked.includes(id)) state.cooked.push(id);
+  const d = DISHES.find((x) => x.id === id);
+  const firstTime = !state.cooked.includes(id);
+  if (firstTime) state.cooked.push(id);
+  delete state.cookProgress[id];
   save(); renderAll(); renderDetail(id);
-  alert('Well done! Added to your cooked list. 🎉');
+  showToast(firstTime
+    ? `Well done — ${d ? d.name : 'dish'} added to your cooked list. 🎉`
+    : 'Already in your cooked list — lovely repeat. 🎉');
 }
 
 // --- Cooking mode ---
 function startCooking(id) {
   state.currentDish = id;
-  state.cookIndex = 0;
+  const d = DISHES.find((x) => x.id === id);
+  const saved = state.cookProgress[id];
+  state.cookIndex = (Number.isInteger(saved) && d && saved >= 0 && saved < d.steps.length) ? saved : 0;
   renderCooking();
   showView('cooking');
+}
+
+function setCookIndex(id, i) {
+  state.cookIndex = i;
+  state.cookProgress[id] = i;
+  save();
+  renderCooking();
 }
 
 function renderCooking() {
   const d = DISHES.find((x) => x.id === state.currentDish);
   const step = d.steps[state.cookIndex];
+  const pct = Math.round(((state.cookIndex + 1) / d.steps.length) * 100);
   $('cooking').innerHTML = `
     <h2>${d.photo} ${d.name}</h2>
+    <div class="progress"><div class="progress-bar" style="width:${pct}%"></div></div>
     <p class="muted">Step ${state.cookIndex + 1} of ${d.steps.length}</p>
     <p class="step">${step.text}</p>
     ${step.minutes ? `<p class="pill">⏱ about ${step.minutes} min</p>` : ''}
@@ -239,11 +266,13 @@ function renderCooking() {
       ${state.cookIndex < d.steps.length - 1
         ? '<button class="btn" id="nextStep">Next →</button>'
         : '<button class="btn" id="finishCook">🎉 Finish & mark cooked</button>'}
-    </div>`;
+    </div>
+    <p><button class="link" id="restartCook">Restart from step 1</button></p>`;
   const prev = $('prevStep'), next = $('nextStep'), fin = $('finishCook');
-  if (prev) prev.addEventListener('click', () => { state.cookIndex--; renderCooking(); });
-  if (next) next.addEventListener('click', () => { state.cookIndex++; renderCooking(); });
+  if (prev) prev.addEventListener('click', () => setCookIndex(d.id, state.cookIndex - 1));
+  if (next) next.addEventListener('click', () => setCookIndex(d.id, state.cookIndex + 1));
   if (fin) fin.addEventListener('click', () => { markCooked(d.id); showDetail(d.id); });
+  $('restartCook').addEventListener('click', () => setCookIndex(d.id, 0));
 }
 
 // --- Cookbook ---

@@ -56,4 +56,11 @@ button { font-family: inherit; }
 .cook-nav { display: flex; justify-content: space-between; margin-top: 1.5rem; }
 ul#shopList, ul#cookedList { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.5rem; }
 #shopPicker label { display: block; margin: 0.3rem 0; }
+.progress { background: var(--line); border-radius: 999px; overflow: hidden; margin: 0.6rem 0; }
+.progress-bar { height: 10px; background: var(--accent); border-radius: 999px; }
+.toast {
+  position: fixed; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
+  background: #2e1f12; color: #ffe9cf; padding: 0.7rem 1.1rem; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25); z-index: 50; max-width: 90vw; text-align: center;
+}
 footer { margin: 2rem 0; color: var(--muted); text-align: center; }
