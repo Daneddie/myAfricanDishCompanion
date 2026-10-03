@@ -6,6 +6,7 @@ let state = {
   favorites: JSON.parse(localStorage.getItem('mad_favs') || '[]'),
   cooked: JSON.parse(localStorage.getItem('mad_cooked') || '[]'),
   shoppingDishes: JSON.parse(localStorage.getItem('mad_shop') || '[]'),
+  checkedItems: JSON.parse(localStorage.getItem('mad_checked') || '[]'),
   cookProgress: JSON.parse(localStorage.getItem('mad_cookindex') || '{}'),
   currentDish: null,
   cookIndex: 0,
@@ -40,6 +41,7 @@ function save() {
   localStorage.setItem('mad_favs', JSON.stringify(state.favorites));
   localStorage.setItem('mad_cooked', JSON.stringify(state.cooked));
   localStorage.setItem('mad_shop', JSON.stringify(state.shoppingDishes));
+  localStorage.setItem('mad_checked', JSON.stringify(state.checkedItems));
   localStorage.setItem('mad_cookindex', JSON.stringify(state.cookProgress));
   localStorage.setItem('mad_units', state.units);
 }
@@ -77,7 +79,7 @@ function bindEvents() {
   $('backBtn').addEventListener('click', () => showView('browse'));
   $('exitCookingBtn').addEventListener('click', () => showDetail(state.currentDish));
   $('clearShop').addEventListener('click', () => {
-    state.shoppingDishes = []; save(); renderAll();
+    state.shoppingDishes = []; state.checkedItems = []; save(); renderAll();
   });
 }
 
@@ -197,11 +199,13 @@ function renderDetail(id) {
     <button class="btn" id="startCooking">${Number.isInteger(state.cookProgress[d.id]) && state.cookProgress[d.id] > 0 ? `▶ Resume cooking (step ${state.cookProgress[d.id] + 1})` : '▶ Start Cooking'}</button>
     <button class="btn secondary" id="favBtn">${isFav ? '💔 Remove from cookbook' : '❤️ Save to cookbook'}</button>
     <button class="btn secondary" id="shopBtn">${inShop ? '✓ In shopping list' : '+ Add to shopping list'}</button>
+    <button class="btn secondary" id="mealBtn">🧺 Add meal (this + pairings)</button>
     <button class="btn secondary" id="cookedBtn">🍳 I cooked this</button>
   `;
   $('startCooking').addEventListener('click', () => startCooking(d.id));
   $('favBtn').addEventListener('click', () => toggleFav(d.id));
   $('shopBtn').addEventListener('click', () => toggleShop(d.id));
+  $('mealBtn').addEventListener('click', () => addMealToShopping(d.id));
   $('cookedBtn').addEventListener('click', () => markCooked(d.id));
   document.querySelectorAll('[data-pair]').forEach((b) =>
     b.addEventListener('click', () => showDetail(b.dataset.pair))
@@ -219,7 +223,36 @@ function toggleShop(id) {
   state.shoppingDishes = state.shoppingDishes.includes(id)
     ? state.shoppingDishes.filter((x) => x !== id)
     : [...state.shoppingDishes, id];
+  pruneChecked();
   save(); renderAll(); renderDetail(id);
+}
+
+function addMealToShopping(id) {
+  const d = DISHES.find((x) => x.id === id);
+  if (!d) return;
+  const meal = [id, ...(d.pairings || [])].filter((pid) => DISHES.some((x) => x.id === pid));
+  let added = 0;
+  meal.forEach((pid) => {
+    if (!state.shoppingDishes.includes(pid)) {
+      state.shoppingDishes.push(pid);
+      added++;
+    }
+  });
+  save(); renderAll(); renderDetail(id);
+  showToast(added ? `Meal added — ${added} dish${added > 1 ? 'es' : ''} in your shopping list. 🧺` : 'That whole meal is already on your list. 🧺');
+}
+
+function shopKey(dishId, ingName) {
+  return `${dishId}|${ingName}`;
+}
+
+function pruneChecked() {
+  const valid = new Set();
+  state.shoppingDishes.forEach((id) => {
+    const d = DISHES.find((x) => x.id === id);
+    if (d) d.ingredients.forEach((i) => valid.add(shopKey(id, i.name)));
+  });
+  state.checkedItems = state.checkedItems.filter((k) => valid.has(k));
 }
 
 function markCooked(id) {
@@ -278,6 +311,8 @@ function renderCooking() {
 // --- Cookbook ---
 function renderCookbook() {
   const favs = DISHES.filter((d) => state.favorites.includes(d.id));
+  $('favHeader').textContent = `❤️ Favourites (${favs.length})`;
+  $('cookedHeader').textContent = `🍳 Cooked (${state.cooked.length})`;
   $('favGrid').innerHTML = favs.length ? favs.map(dishCard).join('') : '<p>Nothing saved yet — tap ❤️ on any dish.</p>';
   document.querySelectorAll('#favGrid .card').forEach((c) =>
     c.addEventListener('click', () => showDetail(c.dataset.id))
@@ -301,6 +336,7 @@ function renderShopping() {
       state.shoppingDishes = cb.checked
         ? [...state.shoppingDishes, id]
         : state.shoppingDishes.filter((x) => x !== id);
+      pruneChecked();
       save(); renderShopping(); updateCounts();
     })
   );
@@ -308,9 +344,23 @@ function renderShopping() {
   state.shoppingDishes.forEach((id) => {
     const d = DISHES.find((x) => x.id === id);
     if (!d) return;
-    d.ingredients.forEach((i) => items.push(`${i.name} — ${unitQty(i)} <span class="muted">(${d.name})</span>`));
+    d.ingredients.forEach((i) => {
+      const key = shopKey(id, i.name);
+      const done = state.checkedItems.includes(key);
+      items.push(`<li class="${done ? 'done' : ''}"><label><input type="checkbox" data-item="${key}" ${done ? 'checked' : ''}/> ${i.name} — ${unitQty(i)} <span class="muted">(${d.name})</span></label></li>`);
+    });
   });
-  $('shopList').innerHTML = items.length ? items.map((t) => `<li>${t}</li>`).join('') : '<li>Your list is empty.</li>';
+  $('shopList').innerHTML = items.length ? items.join('') : '<li>Your list is empty.</li>';
+  document.querySelectorAll('[data-item]').forEach((cb) =>
+    cb.addEventListener('change', () => {
+      const key = cb.dataset.item;
+      state.checkedItems = cb.checked
+        ? [...state.checkedItems, key]
+        : state.checkedItems.filter((k) => k !== key);
+      save();
+      cb.closest('li').classList.toggle('done', cb.checked);
+    })
+  );
 }
 
 function updateCounts() {

@@ -63,4 +63,6 @@ ul#shopList, ul#cookedList { background: var(--card); border: 1px solid var(--li
   background: #2e1f12; color: #ffe9cf; padding: 0.7rem 1.1rem; border-radius: 999px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25); z-index: 50; max-width: 90vw; text-align: center;
 }
+ul#shopList li.done label, ul#cookedList li.done { text-decoration: line-through; color: var(--muted); }
+ul#shopList label, #shopPicker label { cursor: pointer; }
 footer { margin: 2rem 0; color: var(--muted); text-align: center; }
