@@ -10,14 +10,14 @@ Finished dishes: plated and ready to eat. Ingredients: raw and recognisable
 
 ## Finished dishes — `assets/dishes/` (14)
 
-- [ ] `jollof-rice.jpg` — Jollof Rice
-- [ ] `egusi-soup.jpg` — Egusi Soup
-- [ ] `fufu.jpg` — Fufu
-- [ ] `waakye.jpg` — Waakye
-- [ ] `puff-puff.jpg` — Puff-Puff
-- [ ] `groundnut-stew.jpg` — Groundnut Stew
-- [ ] `thieboudienne.jpg` — Thieboudienne
-- [ ] `chicken-yassa.jpg` — Chicken Yassa
+- [x] `jollof-rice.jpg` — Jollof Rice
+- [x] `egusi-soup.jpg` — Egusi Soup
+- [x] `fufu.jpg` — Fufu
+- [x] `waakye.jpg` — Waakye
+- [x] `puff-puff.jpg` — Puff-Puff
+- [x] `groundnut-stew.jpg` — Groundnut Stew
+- [x] `thieboudienne.jpg` — Thieboudienne
+- [x] `chicken-yassa.jpg` — Chicken Yassa
 - [ ] `fataya.jpg` — Fataya
 - [ ] `akara.jpg` — Akara
 - [ ] `efo-riro.jpg` — Efo Riro

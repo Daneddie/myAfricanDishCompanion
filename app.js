@@ -122,6 +122,12 @@ function keyIngNames(d) {
   return (d.keyIngredients || []).map((k) => (typeof k === 'string' ? k : k.name));
 }
 
+// Real photo when supplied (data/dishes.json "image"), emoji stand-in otherwise.
+function dishImg(d, cls) {
+  if (d.image) return `<img class="${cls}" src="${d.image}" alt="Photo of ${d.name}" loading="lazy" />`;
+  return `<span class="${cls} emoji">${d.photo}</span>`;
+}
+
 function filteredDishes() {
   const q = $('search').value.trim().toLowerCase();
   const cat = $('categoryFilter').value;
@@ -140,7 +146,7 @@ function dishCard(d) {
   const flag = d.countryFlag ? `${d.countryFlag} ` : '';
   const timeLabel = `⏱ prep ${d.prepMinutes} + cook ${d.cookMinutes} min`;
   return `<div class="card" data-id="${d.id}">
-    <div class="photo">${d.photo}</div>
+    ${dishImg(d, 'photo')}
     <h3>${fav}${d.name}</h3>
     <div class="meta">
       <span class="pill">${flag}${d.country}</span>
@@ -192,10 +198,10 @@ function renderDetail(id) {
   const pairLinks = d.pairings
     .map((pid) => DISHES.find((x) => x.id === pid))
     .filter(Boolean)
-    .map((p) => `<button class="btn secondary" data-pair="${p.id}">${p.photo} ${p.name}</button>`)
+    .map((p) => `<button class="btn secondary" data-pair="${p.id}">${dishImg(p, 'thumb')} ${p.name}</button>`)
     .join('');
   $('detail').innerHTML = `
-    <div class="detail-photo">${d.photo}</div>
+    ${dishImg(d, 'detail-photo')}
     <h2>${d.name}</h2>
     <div class="meta">
       <span class="pill">${d.countryFlag ? `${d.countryFlag} ` : ''}${d.country}</span>
@@ -314,7 +320,7 @@ function renderCooking() {
   const step = d.steps[state.cookIndex];
   const pct = Math.round(((state.cookIndex + 1) / d.steps.length) * 100);
   $('cooking').innerHTML = `
-    <h2>${d.photo} ${d.name}</h2>
+    <h2>${dishImg(d, 'thumb')} ${d.name}</h2>
     <div class="progress"><div class="progress-bar" style="width:${pct}%"></div></div>
     <p class="muted">Step ${state.cookIndex + 1} of ${d.steps.length}</p>
     <p class="step">${step.text}</p>
@@ -346,7 +352,7 @@ function renderCookbook() {
   $('cookedList').innerHTML = state.cooked.length
     ? state.cooked.map((id) => {
         const d = DISHES.find((x) => x.id === id);
-        return d ? `<li>${d.photo} ${d.name}</li>` : '';
+        return d ? `<li>${dishImg(d, 'thumb')} ${d.name}</li>` : '';
       }).join('')
     : '<li>Not yet — go cook something delicious!</li>';
 }
@@ -355,7 +361,7 @@ function renderCookbook() {
 function renderShopping() {
   $('shopPicker').innerHTML = DISHES.map((d) => `
     <label><input type="checkbox" data-shop="${d.id}" ${state.shoppingDishes.includes(d.id) ? 'checked' : ''}/>
-    ${d.photo} ${d.name}</label>`).join('');
+    ${dishImg(d, 'thumb')} ${d.name}</label>`).join('');
   document.querySelectorAll('[data-shop]').forEach((cb) =>
     cb.addEventListener('change', () => {
       const id = cb.dataset.shop;
