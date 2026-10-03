@@ -33,8 +33,8 @@ A dependency-free static prototype — no build step, no backend. Open it and co
 - `index.html` — app shell (browse, search, dish detail, cooking mode, shopping list, cookbook)
 - `styles.css` — warm, homely styling
 - `app.js` — all client logic (filtering, units toggle, cooking mode, pairings, shopping list, favorites + cooked tracking via `localStorage`)
-- `data/dishes.json` — 6 starter West African dishes with full fields per the spec
-- Sample dishes: Jollof Rice (Nigeria/Ghana), Egusi Soup, Fufu (swallow), Waakye, Puff-Puff, Groundnut Stew
+- `data/dishes.json` — 14 starter West African dishes with full fields per the spec (schema: prep/cook minutes, servings, country flag, dietary tags + adaptation note, key ingredients with photos, ingredients with honest substitutions, timed steps with "why" tips, 2–3 pairings)
+- Dishes: Jollof Rice, Egusi Soup, Efo Riro (Nigeria); Fufu, Waakye, Banku, Kelewele (Ghana); Groundnut Stew (Mafé), Thiéboudienne, Chicken Yassa, Fataya (Senegal); plus Puff-Puff, Akara, Pounded Yam
 
 Favorites, cooked history, shopping list, and unit preference persist in `localStorage`.
 

@@ -82,6 +82,10 @@ function showView(view) {
   if (view === 'shopping') renderShopping();
 }
 
+function keyIngNames(d) {
+  return (d.keyIngredients || []).map((k) => (typeof k === 'string' ? k : k.name));
+}
+
 function filteredDishes() {
   const q = $('search').value.trim().toLowerCase();
   const cat = $('categoryFilter').value;
@@ -90,24 +94,26 @@ function filteredDishes() {
     if (cat && d.category !== cat) return false;
     if (country && d.country !== country) return false;
     if (!q) return true;
-    const hay = (d.name + ' ' + d.country + ' ' + d.ingredients.map((i) => i.name).join(' ')).toLowerCase();
+    const hay = (d.name + ' ' + d.country + ' ' + d.ingredients.map((i) => i.name).join(' ') + ' ' + keyIngNames(d).join(' ')).toLowerCase();
     return hay.includes(q);
   });
 }
 
 function dishCard(d) {
   const fav = state.favorites.includes(d.id) ? '❤️ ' : '';
+  const flag = d.countryFlag ? `${d.countryFlag} ` : '';
+  const timeLabel = `⏱ prep ${d.prepMinutes} + cook ${d.cookMinutes} min`;
   return `<div class="card" data-id="${d.id}">
     <div class="photo">${d.photo}</div>
     <h3>${fav}${d.name}</h3>
     <div class="meta">
-      <span class="pill">${d.country}</span>
+      <span class="pill">${flag}${d.country}</span>
       <span class="pill">${d.category}</span>
-      <span class="pill">⏱ ${d.timeMinutes} min</span>
+      <span class="pill">${timeLabel}</span>
       <span class="pill">${d.difficulty}</span>
     </div>
     <p class="muted">${d.dietaryTags.join(' · ')}</p>
-    <p class="muted">${d.keyIngredients.join(', ')}</p>
+    <p class="muted">${keyIngNames(d).join(', ')}</p>
   </div>`;
 }
 
@@ -145,13 +151,16 @@ function renderDetail(id) {
     <div class="detail-photo">${d.photo}</div>
     <h2>${d.name}</h2>
     <div class="meta">
-      <span class="pill">${d.country}</span>
+      <span class="pill">${d.countryFlag ? `${d.countryFlag} ` : ''}${d.country}</span>
       <span class="pill">${d.category}</span>
-      <span class="pill">⏱ ${d.timeMinutes} min</span>
+      <span class="pill">⏱ prep ${d.prepMinutes} + cook ${d.cookMinutes} min</span>
       <span class="pill">${d.difficulty}</span>
+      <span class="pill">Serves ${d.servingsDefault}</span>
       ${d.dietaryTags.map((t) => `<span class="pill">${t}</span>`).join('')}
     </div>
     <p class="blurb">${d.blurb}</p>
+    ${d.adaptationNote ? `<p class="why">🌱 ${d.adaptationNote}</p>` : ''}
+    <p class="muted">Key ingredients: ${(d.keyIngredients || []).map((k) => (typeof k === 'string' ? k : `${k.photo ? k.photo + ' ' : ''}${k.name}`)).join(' · ')}</p>
     <h3>Ingredients (${state.units === 'metric' ? 'metric' : 'cups/spoons'})</h3>
     <ul>${d.ingredients.map((i) => `
       <li><strong>${i.name}</strong> — ${unitQty(i)}

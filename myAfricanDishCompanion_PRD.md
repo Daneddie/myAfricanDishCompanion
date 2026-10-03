@@ -1,6 +1,6 @@
 # Product Requirements Document: MyAfricanDishCompanion
 
-**Status:** Draft v1 · **Owner:** \[Daniel Dyke\] · **Last updated:** September 27, 2026
+**Status:** Draft v1 · **Owner:** \[Daniel Dyke\] · **Last updated:** October 3, 2026
 
 ## 1. Overview
 
@@ -33,7 +33,7 @@ African cuisine — starting with West Africa — is globally popular but poorly
 
 - **Diaspora cooks** who grew up around these dishes but never learned exact techniques, and now live somewhere ingredients aren't always available.
 - **Curious newcomers** who've had West African food and want to cook it themselves.
-- **Home cooks within West Africa** who want a reliable reference for dishes outside their usual repertoire (e.g., a Nigerian home cook wanting to try Thieboudienne).
+- **Home cooks within West Africa** who want a reliable reference for dishes they already know, and a way to try dishes from neighbouring countries (e.g., a Nigerian home cook wanting to try Thieboudienne).
 
 ## 5. Scope: V1
 
@@ -108,6 +108,17 @@ African cuisine — starting with West Africa — is globally popular but poorly
 - Community-contributed dishes or regional variations.
 - Audio-guided or hands-free cooking mode.
 - Full meal planner beyond a simple shopping list (weekly planning, cost estimates).
+- Shopping list improvement: combine/sum overlapping ingredients across dishes, rather than grouping by dish as in V1.
+- **Cook With What You Have** *(post-V1, not committed)*: users enter, or eventually photograph, the ingredients already in their kitchen. The app suggests dishes that fit what's available, adjusts quantities where practical, and builds a missing-ingredients list.
+
+### Business Model (Exploratory, Not Decided)
+
+These are possible paths to sustainability for discussion only. None is a commitment or a revenue projection.
+
+- **Freemium**: core dish discovery and cooking free; premium could unlock deeper personalization or advanced planning.
+- **Partnerships**: African food brands, ingredient suppliers, cultural organizations and culinary partners.
+- **Commerce / affiliate**: relevant ingredient and kitchen-product referrals where commercially appropriate.
+- **Premium content**: curated collections, regional culinary journeys or advanced cooking experiences.
 
 ## 11. Open Questions
 
@@ -115,7 +126,7 @@ African cuisine — starting with West Africa — is globally popular but poorly
 - How should conflicting regional/family variations of the same dish (e.g., Jollof) be handled as the library grows?
 - Should the shopping list eventually combine/sum overlapping ingredients across dishes, or stay grouped by dish (as in V1) for simplicity?
 
-## 12. Tool Choice Decision Note (for AI grader verification)
+## 12. Technical Decision Note
 
 - **Question asked to AI builder:** Should we keep `data/dishes.json` + browser `localStorage` for V1, or switch to SQLite / Firebase-Supabase?
 - **Decided:** Keep JSON + localStorage (Recommended).
