@@ -119,12 +119,23 @@ function dishCard(d) {
 
 function renderGrid() {
   const list = filteredDishes();
+  const total = DISHES.length;
+  $('resultCount').textContent = list.length === total
+    ? `Showing all ${total} dishes`
+    : `Showing ${list.length} of ${total} dishes`;
   $('dishGrid').innerHTML = list.length
     ? list.map(dishCard).join('')
-    : '<p>No dishes found — try another search, like "rice" or "peanut".</p>';
+    : '<p>No dishes found — try another search, like "rice" or "peanut". <button class="link" id="clearFilters">Clear search &amp; filters</button></p>';
   document.querySelectorAll('#dishGrid .card').forEach((c) =>
     c.addEventListener('click', () => showDetail(c.dataset.id))
   );
+  const clear = $('clearFilters');
+  if (clear) clear.addEventListener('click', () => {
+    $('search').value = '';
+    $('categoryFilter').value = '';
+    $('countryFilter').value = '';
+    renderGrid();
+  });
 }
 
 function unitQty(ing) {

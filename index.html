@@ -28,10 +28,10 @@
       <input id="search" type="search" placeholder="Search dish or ingredient… e.g. jollof, peanut" />
       <select id="categoryFilter">
         <option value="">All categories</option>
-        <option value="soups">Soups</option>
-        <option value="rice">Rice</option>
+        <option value="rice">Rice Dishes</option>
+        <option value="soups">Soups &amp; Stews</option>
         <option value="swallow">Swallow</option>
-        <option value="snacks">Snacks</option>
+        <option value="snacks">Snacks &amp; Small Chops</option>
       </select>
       <select id="countryFilter"><option value="">All countries</option></select>
       <div class="units">
@@ -39,6 +39,7 @@
         <label><input type="radio" name="units" value="cups" /> Cups/spoons</label>
       </div>
     </div>
+    <p id="resultCount" class="muted" aria-live="polite"></p>
     <div id="dishGrid" class="grid"></div>
   </section>
 
