@@ -8,12 +8,16 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 
 - **Frontend:** same app, deployed on **Cloudflare Pages** (free, CDN, pairs with R2).
 - **Backend:** Node.js API with Express, hosting auth + dish/user-state endpoints.
-  Host on Render / Fly.io / Railway (pick one at build time; all have free/low tiers).
+  Host on **Render** (decided): simplest git-push deploys, predictable fixed pricing,
+  zero-downtime deploys; free tier sleeps, so budget the $7/mo Starter for anything
+  user-facing. DB stays on Neon; media on R2 — both reachable over public HTTPS/S3
+  from any host, so Render couples cleanly with the rest of the stack.
 - **Auth:** **Better Auth** (self-hosted) — email/password first, social/passkeys later.
   Sessions in Postgres via Better Auth's schema.
 - **Database:** **Postgres** (Neon free tier recommended; serverless-friendly).
-- **Media:** **Cloudflare R2** — `mad-dishes/` and `mad-ingredients/` prefixes (or two
-  buckets), served via custom domain. Replaces `assets/` JPGs in git.
+- **Media:** **Cloudflare R2** — one bucket with `dishes/` and `ingredients/`
+  prefixes (decided: single bucket, one custom domain), served via custom domain.
+  Replaces `assets/` JPGs in git.
 - **Secrets:** backend `.env` (Better Auth secret, DB URL, R2 keys) — never in the repo.
   Frontend gets only a public API base URL + R2 public base URL.
 
@@ -83,7 +87,9 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 
 ## Open decisions (resolve at build time)
 
-1. Backend host: Render vs Fly.io vs Railway.
+1. ~~Backend host: Render vs Fly.io vs Railway.~~ Decided: **Render** (simplest ops;
+   Railway/Fly.io are cheaper at some scales but add metering/ops complexity).
 2. ~~Node framework: Hono vs Express.~~ Decided: **Node.js + Express**.
 3. Social login providers (post-B1): Google first?
-4. R2 layout: one bucket + prefixes vs two buckets.
+4. ~~R2 layout: one bucket + prefixes vs two buckets.~~ Decided: **one bucket,
+   `dishes/` + `ingredients/` prefixes, single custom domain**.
