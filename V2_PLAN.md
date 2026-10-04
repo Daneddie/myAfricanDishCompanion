@@ -69,7 +69,8 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 
 - Cloudflare Pages: free. R2: 10 GB free, zero egress fees.
 - Neon Postgres: free tier suffices to start. Backend host: free/low tier.
-- Email delivery for auth (needed at B1): Resend/Postmark free tier.
+- Email delivery for auth (needed at B1): ZeptoMail (Zoho) — pay-as-you-go
+  (~$2.50 per 10k, no monthly fee; first 10k free trial). SMTP/API from Express.
 
 ## Risks & mitigations
 
