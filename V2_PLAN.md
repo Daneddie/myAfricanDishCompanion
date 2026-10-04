@@ -6,7 +6,9 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 
 ## Stack lock (V2)
 
-- **Frontend:** same app, deployed on **Cloudflare Pages** (free, CDN, pairs with R2).
+- **Frontend:** same app, deployed on **Netlify** (decided; free tier, CDN,
+  deploy-from-Git). R2 media and the Render API are referenced by URL, so hosting
+  is interchangeable — Netlify needs no special integration with either.
 - **Backend:** Node.js API with Express, hosting auth + dish/user-state endpoints.
   Host on **Render** (decided): simplest git-push deploys, predictable fixed pricing,
   zero-downtime deploys; free tier sleeps, so budget the $7/mo Starter for anything
@@ -36,7 +38,7 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 ## Phases
 
 ### B0 — Hosting (no code changes)
-- Cloudflare Pages from `main`; custom domain optional.
+- Netlify deploy from `main`; custom domain optional.
 - Output: public URL replaces htmlpreview; localhost flow unchanged.
 
 ### B1 — Backend + Auth
@@ -71,7 +73,7 @@ fully offline/anonymous throughout — V2 adds sync, it doesn't remove local mod
 
 ## Costs (approx, free tiers first)
 
-- Cloudflare Pages: free. R2: 10 GB free, zero egress fees.
+- Netlify: free tier (100 GB bandwidth). R2: 10 GB free, zero egress fees.
 - Neon Postgres: free tier suffices to start. Backend host: free/low tier.
 - Email delivery for auth (needed at B1): ZeptoMail (Zoho) — pay-as-you-go
   (~$2.50 per 10k, no monthly fee; first 10k free trial). SMTP/API from Express.
