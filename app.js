@@ -16,8 +16,11 @@ let state = {
 const $ = (id) => document.getElementById(id);
 
 // Backend API (B1). Override with window.MAD_API_BASE before app.js loads.
-// If the API is unreachable, the app silently stays in anonymous local mode.
-const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE) || 'http://localhost:4000').replace(/\/$/, '');
+// Local dev uses localhost; anywhere else defaults to the production API.
+const PROD_API_BASE = 'https://mad-api.onrender.com';
+const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE)
+  || (/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? 'http://localhost:4000' : PROD_API_BASE)
+).replace(/\/$/, '');
 let apiAvailable = false;
 let sessionUser = null;
 

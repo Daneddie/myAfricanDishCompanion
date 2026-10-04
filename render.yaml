@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: mad-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install --omit=dev
+    startCommand: node src/index.js
+    envVars:
+      # Secrets — set these in the Render dashboard (never in git):
+      - key: DATABASE_URL
+        sync: false
+      - key: BETTER_AUTH_SECRET
+        sync: false
+      - key: BETTER_AUTH_URL
+        sync: false
+      # Public config:
+      - key: TRUSTED_ORIGINS
+        value: http://localhost:8000,https://myafricandishcompanion.netlify.app

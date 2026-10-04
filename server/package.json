@@ -4,6 +4,7 @@
   "private": true,
   "description": "MyAfricanDishCompanion API (Express + Better Auth + Postgres)",
   "type": "module",
+  "engines": { "node": ">=20" },
   "scripts": {
     "dev": "node src/index.js",
     "start": "node src/index.js"

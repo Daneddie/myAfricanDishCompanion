@@ -18,12 +18,12 @@ Finished dishes: plated and ready to eat. Ingredients: raw and recognisable
 - [x] `groundnut-stew.jpg` — Groundnut Stew
 - [x] `thieboudienne.jpg` — Thieboudienne
 - [x] `chicken-yassa.jpg` — Chicken Yassa
-- [ ] `fataya.jpg` — Fataya
-- [ ] `akara.jpg` — Akara
-- [ ] `efo-riro.jpg` — Efo Riro
-- [ ] `pounded-yam.jpg` — Pounded Yam
-- [ ] `banku.jpg` — Banku
-- [ ] `kelewele.jpg` — Kelewele
+- [x] `fataya.jpg` — Fataya
+- [x] `akara.jpg` — Akara
+- [x] `efo-riro.jpg` — Efo Riro
+- [x] `pounded-yam.jpg` — Pounded Yam
+- [x] `banku.jpg` — Banku
+- [x] `kelewele.jpg` — Kelewele
 
 ## Key ingredients — `assets/ingredients/` (37, shared across dishes)
 
