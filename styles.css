@@ -69,6 +69,12 @@ ul#shopList, ul#cookedList { background: var(--card); border: 1px solid var(--li
 ul#shopList li.done label, ul#cookedList li.done { text-decoration: line-through; color: var(--muted); }
 ul#shopList label, #shopPicker label { cursor: pointer; }
 
+/* Account */
+.auth-tabs { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+.auth-tabs .btn { margin-top: 0; }
+#authForm input { padding: 0.55rem 0.7rem; border-radius: 10px; border: 1px solid var(--line); font-size: 1rem; width: min(320px, 100%); }
+.error { color: #a33b1f; background: #fbe3c8; border-radius: 10px; padding: 0.5rem 0.8rem; }
+
 /* Kitchen mode: big tap targets */
 .cook-nav .btn { padding: 0.8rem 1.4rem; font-size: 1.1rem; }
 

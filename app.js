@@ -15,6 +15,110 @@ let state = {
 
 const $ = (id) => document.getElementById(id);
 
+// Backend API (B1). Override with window.MAD_API_BASE before app.js loads.
+// If the API is unreachable, the app silently stays in anonymous local mode.
+const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE) || 'http://localhost:4000').replace(/\/$/, '');
+let apiAvailable = false;
+let sessionUser = null;
+
+async function api(path, options = {}) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 8000);
+  try {
+    const res = await fetch(API_BASE + path, {
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+      ...options,
+    });
+    const text = await res.text();
+    let data = null;
+    try { data = text ? JSON.parse(text) : null; } catch (e) { /* non-JSON */ }
+    return { ok: res.ok, status: res.status, data };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function refreshSession() {
+  const wasLoggedIn = !!sessionUser;
+  try {
+    const { ok, data } = await api('/api/me');
+    apiAvailable = true;
+    sessionUser = ok && data && data.user ? data.user : null;
+  } catch (e) {
+    apiAvailable = false;
+    sessionUser = null;
+  }
+  updateAuthNav();
+  if (state.view === 'account') renderAccount();
+  if (sessionUser && !wasLoggedIn) syncOnLogin();
+}
+
+let pushTimer = null;
+let suppressPush = false;
+
+function snapshot() {
+  return {
+    favorites: [...state.favorites],
+    cooked: [...state.cooked],
+    shoppingDishes: [...state.shoppingDishes],
+    checkedItems: [...state.checkedItems],
+    cookProgress: { ...state.cookProgress },
+    units: state.units,
+  };
+}
+
+function applySnapshot(s) {
+  suppressPush = true;
+  state.favorites = [...(s.favorites || [])];
+  state.cooked = [...(s.cooked || [])];
+  state.shoppingDishes = [...(s.shoppingDishes || [])];
+  state.checkedItems = [...(s.checkedItems || [])];
+  state.cookProgress = { ...(s.cookProgress || {}) };
+  if (s.units === 'metric' || s.units === 'cups') state.units = s.units;
+  save();
+  suppressPush = false;
+  syncUnitRadios();
+  renderAll();
+  if (state.currentDish) renderDetail(state.currentDish);
+}
+
+function schedulePush() {
+  if (suppressPush || !sessionUser || !apiAvailable) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(async () => {
+    try {
+      await api('/api/state', { method: 'PUT', body: JSON.stringify(snapshot()) });
+    } catch (e) { /* offline: local copy is truth until next change */ }
+  }, 800);
+}
+
+function snapshotEmpty(s) {
+  return !s.favorites.length && !s.cooked.length && !s.shoppingDishes.length
+    && !s.checkedItems.length && !Object.keys(s.cookProgress || {}).length;
+}
+
+// First login: server empty + local full -> upload local; else adopt server.
+async function syncOnLogin() {
+  try {
+    const { ok, data } = await api('/api/state');
+    if (!ok || !data) return;
+    if (snapshotEmpty(data) && !snapshotEmpty(snapshot())) {
+      await api('/api/state', { method: 'PUT', body: JSON.stringify(snapshot()) });
+      showToast('Your local cookbook was uploaded to your account. 🎉');
+    } else if (!snapshotEmpty(data)) {
+      applySnapshot(data);
+      showToast('Synced your cookbook from your account. 🎉');
+    }
+  } catch (e) { /* offline: stay local */ }
+}
+
+function updateAuthNav() {
+  const btn = $('authNavBtn');
+  if (!btn) return;
+  btn.textContent = sessionUser ? `👤 ${sessionUser.name || sessionUser.email}` : 'Log in / Sign up';
+}
+
 let toastTimer = null;
 function showToast(msg) {
   const t = $('toast');
@@ -39,6 +143,7 @@ async function load() {
   syncUnitRadios();
   bindEvents();
   renderAll();
+  refreshSession();
 }
 
 function save() {
@@ -49,6 +154,7 @@ function save() {
   localStorage.setItem('mad_cookindex', JSON.stringify(state.cookProgress));
   localStorage.setItem('mad_metrics', JSON.stringify(state.metrics));
   localStorage.setItem('mad_units', state.units);
+  schedulePush();
 }
 
 function bumpMetric(key) {
@@ -108,7 +214,7 @@ function bindEvents() {
 
 function showView(view) {
   state.view = view;
-  ['browse', 'detail', 'cooking', 'cookbook', 'shopping'].forEach((v) => {
+  ['browse', 'detail', 'cooking', 'cookbook', 'shopping', 'account'].forEach((v) => {
     $('view-' + v).hidden = v !== view;
   });
   document.querySelectorAll('.nav-btn').forEach((b) =>
@@ -116,6 +222,7 @@ function showView(view) {
   );
   if (view === 'cookbook') renderCookbook();
   if (view === 'shopping') renderShopping();
+  if (view === 'account') renderAccount();
 }
 
 function keyIngNames(d) {
@@ -393,6 +500,68 @@ function renderShopping() {
       cb.closest('li').classList.toggle('done', cb.checked);
     })
   );
+}
+
+// --- Account (B1: login UI; anonymous local mode untouched) ---
+let authMode = 'login'; // or 'signup'
+
+function renderAccount() {
+  const box = $('accountBox');
+  if (!apiAvailable) {
+    box.innerHTML = '<p>Account server is offline — your cookbook keeps working on this device. Start the API to log in.</p>';
+    return;
+  }
+  if (sessionUser) {
+    box.innerHTML = `
+      <p>Logged in as <strong>${sessionUser.email}</strong>.</p>
+      <p class="muted">Sync of cookbook data across devices lands in B2 — for now your lists stay on this device.</p>
+      <button class="btn secondary" id="logoutBtn">Log out</button>`;
+    $('logoutBtn').addEventListener('click', async () => {
+      await api('/api/auth/sign-out', { method: 'POST' });
+      clearTimeout(pushTimer);
+      sessionUser = null;
+      updateAuthNav(); renderAccount();
+      showToast('Logged out. Your local cookbook stays put. 👋');
+    });
+    return;
+  }
+  const isSignup = authMode === 'signup';
+  box.innerHTML = `
+    <div class="auth-tabs">
+      <button class="btn ${!isSignup ? '' : 'secondary'}" id="tabLogin">Log in</button>
+      <button class="btn ${isSignup ? '' : 'secondary'}" id="tabSignup">Sign up</button>
+    </div>
+    <form id="authForm">
+      ${isSignup ? '<p><label>Name<br/><input id="authName" type="text" autocomplete="name" required /></label></p>' : ''}
+      <p><label>Email<br/><input id="authEmail" type="email" autocomplete="email" required /></label></p>
+      <p><label>Password (8+ characters)<br/><input id="authPassword" type="password" autocomplete="${isSignup ? 'new-password' : 'current-password'}" minlength="8" required /></label></p>
+      <p id="authError" class="error" hidden></p>
+      <button class="btn" type="submit">${isSignup ? 'Create account' : 'Log in'}</button>
+    </form>`;
+  $('tabLogin').addEventListener('click', () => { authMode = 'login'; renderAccount(); });
+  $('tabSignup').addEventListener('click', () => { authMode = 'signup'; renderAccount(); });
+  $('authForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const err = $('authError');
+    err.hidden = true;
+    const email = $('authEmail').value.trim();
+    const password = $('authPassword').value;
+    const endpoint = isSignup ? '/api/auth/sign-up/email' : '/api/auth/sign-in/email';
+    const payload = isSignup
+      ? { name: $('authName').value.trim(), email, password }
+      : { email, password };
+    try {
+      const { ok, data } = await api(endpoint, { method: 'POST', body: JSON.stringify(payload) });
+      if (!ok) throw new Error((data && (data.message || data.error)) || 'Something went wrong — please try again.');
+      await refreshSession();
+      showToast(isSignup ? 'Account created — welcome! 🎉' : 'Welcome back! 🎉');
+    } catch (ex) {
+      err.textContent = ex.message === 'Failed to fetch' || ex.name === 'AbortError'
+        ? 'Cannot reach the account server. Is the API running?'
+        : ex.message;
+      err.hidden = false;
+    }
+  });
 }
 
 function updateCounts() {

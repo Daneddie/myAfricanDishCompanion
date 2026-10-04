@@ -17,6 +17,7 @@
       <button data-view="browse" class="nav-btn active">Browse</button>
       <button data-view="cookbook" class="nav-btn">My Cookbook <span id="favCount"></span></button>
       <button data-view="shopping" class="nav-btn">Shopping List <span id="shopCount"></span></button>
+      <button data-view="account" class="nav-btn" id="authNavBtn">Log in / Sign up</button>
     </nav>
   </div>
 </header>
@@ -72,6 +73,12 @@
     <div id="shopPicker"></div>
     <ul id="shopList"></ul>
     <button id="clearShop">Clear list</button>
+  </section>
+  <!-- ACCOUNT -->
+  <section id="view-account" hidden>
+    <h2>Account</h2>
+    <p class="muted">Log in to sync your cookbook across devices. No account? Everything still works anonymously on this device.</p>
+    <div id="accountBox"></div>
   </section>
 </main>
 

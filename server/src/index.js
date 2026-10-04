@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import { toNodeHandler } from 'better-auth/node';
 import { auth } from './auth.js';
+import { registerStateRoutes } from './state.js';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -27,6 +28,8 @@ app.get('/api/me', async (req, res) => {
   if (!session) return res.status(401).json({ user: null });
   res.json({ user: session.user });
 });
+
+registerStateRoutes(app);
 
 app.listen(PORT, () => {
   console.log(`mad-api listening on :${PORT}`);
