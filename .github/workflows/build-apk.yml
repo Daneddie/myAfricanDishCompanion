@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '17'
 
       - uses: actions/setup-node@v4
         with:
@@ -36,7 +36,7 @@ jobs:
       - name: Init Capacitor
         run: |
           npm init -y >/dev/null 2>&1 || true
-          npm install @capacitor/core @capacitor/cli @capacitor/android >/dev/null 2>&1
+          npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6 >/dev/null 2>&1
           npx cap init MADish com.madish.app --web-dir=dist >/dev/null
           npx cap add android >/dev/null
           npx cap sync android
