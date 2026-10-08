@@ -2,8 +2,8 @@
   --bg: #fff8f0;
   --card: #ffffff;
   --ink: #3a2a1a;
-  --muted: #8a7460;
-  --accent: #c2571b;
+  --muted: #6b5741;
+  --accent: #9e4413;
   --accent-soft: #fbe3c8;
   --line: #ecdcc6;
 }
@@ -17,15 +17,17 @@ header { background: #2e1f12; color: #ffe9cf; padding: 1.2rem 0; }
 header h1 { margin: 0; font-size: 1.5rem; }
 .tagline { margin: 0.2rem 0 0; color: #d9b98f; font-style: italic; }
 .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-nav { display: flex; gap: 0.5rem; }
+nav { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .nav-btn {
   border: 1px solid #6b4c2e; background: transparent; color: #ffe9cf;
   padding: 0.45rem 0.8rem; border-radius: 999px; cursor: pointer;
+  min-height: 44px;
 }
 .nav-btn.active, .nav-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .controls { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.2rem 0; align-items: center; }
 .controls input[type="search"], .controls select {
   padding: 0.55rem 0.7rem; border-radius: 10px; border: 1px solid var(--line); font-size: 1rem;
+  min-height: 44px;
 }
 .units { margin-left: auto; display: flex; gap: 0.8rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
@@ -44,13 +46,15 @@ button { font-family: inherit; }
 .btn {
   background: var(--accent); color: #fff; border: none; border-radius: 10px;
   padding: 0.55rem 0.9rem; cursor: pointer; margin-right: 0.5rem; margin-top: 0.5rem;
+  min-height: 44px;
 }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .btn.secondary { background: #6b4c2e; }
 .link { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 1rem; margin: 1rem 0; }
 .muted { color: var(--muted); }
 .detail-photo { font-size: 4rem; }
 img.detail-photo { width: 100%; max-height: 320px; object-fit: cover; border-radius: 14px; font-size: 1rem; }
-img.thumb { width: 30px; height: 30px; object-fit: cover; border-radius: 50%; vertical-align: middle; }
+img.thumb { width: 38px; height: 38px; object-fit: cover; border-radius: 50%; vertical-align: middle; }
 .steps li { margin-bottom: 0.7rem; }
 .why { display: block; background: #fdf3e3; border-left: 3px solid var(--accent); padding: 0.35rem 0.6rem; margin-top: 0.3rem; font-size: 0.92rem; }
 .sub { color: var(--muted); font-size: 0.9rem; }

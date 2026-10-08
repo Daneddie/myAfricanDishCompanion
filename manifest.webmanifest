@@ -1,0 +1,14 @@
+{
+  "name": "MyAfricanDishCompanion",
+  "short_name": "MADish",
+  "description": "West African cooking companion — discover, cook, shop. Works offline in the kitchen.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#2e1f12",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

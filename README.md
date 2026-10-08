@@ -4,7 +4,7 @@ A warm, homely kitchen companion for West African cooking — like a knowledgeab
 
 Starting with **West African dishes**, expanding region by region later.
 
-**Status:** V1 complete (Phases 1–6) — static prototype, no build step, no backend.
+**Status:** V1 complete (Phases 1–6) — static-first, anonymous-local by default, optional account sync if API is running.
 
 ## What it does (V1 scope)
 
@@ -28,11 +28,13 @@ Starting with **West African dishes**, expanding region by region later.
   - Save favorites to a personal cookbook (with counts)
   - "Cooked this" tracking with inline confirmation (no popups)
 
-## Dishes (14)
+## Dishes (14, origins inclusive per PRD §9)
 
-Nigeria (6): Jollof Rice, Egusi Soup, Efo Riro, Puff-Puff, Akara, Pounded Yam.
-Ghana (4): Fufu, Waakye, Banku, Kelewele.
-Senegal (4): Groundnut Stew (Mafé), Thiéboudienne, Chicken Yassa, Fataya.
+Shared dishes list all countries involved:
+- Jollof Rice (Nigeria / Ghana / Senegal), Egusi Soup (Nigeria / Ghana / Cameroon), Fufu (Ghana / Nigeria), Groundnut Stew/Mafé (Senegal / Mali)
+- Nigeria also: Efo Riro, Puff-Puff, Akara, Pounded Yam
+- Ghana also: Waakye, Banku, Kelewele
+- Senegal also: Thiéboudienne, Chicken Yassa, Fataya
 
 ## Getting started
 
@@ -64,12 +66,15 @@ MyAfricanDishCompanion/
 └── .env.example
 ```
 
-## Privacy: everything stays local
+## Privacy: local-first
 
-No accounts, no tracking, no network calls except loading `data/dishes.json`.
+Anonymous by default: no tracking, dish data loads from local `data/dishes.json`.
 All user state lives in `localStorage`: `mad_favs`, `mad_cooked`, `mad_shop`,
 `mad_checked`, `mad_cookindex`, `mad_units`, plus local-only usage counters
 `mad_metrics` (`cookOpens`, `cookCompletes`, `favAdds`, `searches`).
+Optional: Log in / Sign up syncs a copy to the account API when configured
+(`window.MAD_API_BASE`, defaults to `http://localhost:4000` locally,
+production API otherwise). Offline or logged out, everything still works on-device.
 
 ## QA checklist (passes)
 

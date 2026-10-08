@@ -2,8 +2,8 @@
   {
     "id": "jollof-rice",
     "name": "Jollof Rice",
-    "country": "Nigeria",
-    "countryFlag": "🇳🇬",
+    "country": "Nigeria / Ghana / Senegal",
+    "countryFlag": "🇳🇬 🇬🇭 🇸🇳",
     "category": "rice",
     "photo": "🍚",
     "image": "assets/dishes/jollof-rice.jpg",
@@ -11,37 +11,112 @@
     "cookMinutes": 40,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Gluten-free", "Dairy-free"],
+    "dietaryTags": [
+      "Gluten-free",
+      "Dairy-free"
+    ],
     "adaptationNote": "Use vegetable stock + smoked paprika to make it vegetarian — still smoky and tasty.",
-    "blurb": "The beloved party rice of Nigeria and Ghana — smoky, tomato-rich, and always at the centre of celebrations, Sundays, and friendly debates about who makes it best.",
+    "blurb": "Loved across Nigeria, Ghana and Senegal — smoky, tomato-rich party rice at celebrations and Sundays. A cousin of Thieboudienne, and the centre of friendly debates about who makes it best. Make a big pot to share.",
     "keyIngredients": [
-      { "name": "Long-grain rice", "photo": "🍚" },
-      { "name": "Tomatoes", "photo": "🍅" },
-      { "name": "Red bell peppers", "photo": "🫑" },
-      { "name": "Smoked paprika", "photo": "🌶️" }
+      {
+        "name": "Long-grain rice",
+        "photo": "🍚"
+      },
+      {
+        "name": "Tomatoes",
+        "photo": "🍅"
+      },
+      {
+        "name": "Red bell peppers",
+        "photo": "🫑"
+      },
+      {
+        "name": "Smoked paprika",
+        "photo": "🌶️"
+      }
     ],
     "ingredients": [
-      { "name": "Long-grain parboiled rice", "metric": "500 g", "cups": "2½ cups", "substitution": "Basmati in a pinch", "substitutionImpact": "Less smoky absorption; grains break more easily — still tasty." },
-      { "name": "Fresh tomatoes", "metric": "400 g", "cups": "about 4 medium", "substitution": "400 g tinned chopped tomatoes", "substitutionImpact": "Slightly less fresh sweetness; add a pinch of sugar." },
-      { "name": "Red bell peppers", "metric": "2 large", "cups": "2 large", "substitution": "Tatashe if you can find it", "substitutionImpact": "Tatashe gives the classic colour and mild heat." },
-      { "name": "Scotch bonnet", "metric": "1", "cups": "1", "substitution": "Habanero or ½ tsp chilli flakes", "substitutionImpact": "Similar heat; habanero is a touch fruitier." },
-      { "name": "Tomato paste", "metric": "70 g", "cups": "5 tbsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Chicken stock", "metric": "750 ml", "cups": "3 cups", "substitution": "Vegetable stock + 1 tsp smoked paprika", "substitutionImpact": "Loses some depth; paprika brings back smokiness. Makes it vegetarian." }
+      {
+        "name": "Long-grain parboiled rice",
+        "metric": "500 g",
+        "cups": "2½ cups",
+        "substitution": "Basmati in a pinch",
+        "substitutionImpact": "Less smoky absorption; grains break more easily — still tasty."
+      },
+      {
+        "name": "Fresh tomatoes",
+        "metric": "400 g",
+        "cups": "about 4 medium",
+        "substitution": "400 g tinned chopped tomatoes",
+        "substitutionImpact": "Slightly less fresh sweetness; add a pinch of sugar."
+      },
+      {
+        "name": "Red bell peppers",
+        "metric": "2 large",
+        "cups": "2 large",
+        "substitution": "Tatashe if you can find it",
+        "substitutionImpact": "Tatashe gives the classic colour and mild heat."
+      },
+      {
+        "name": "Scotch bonnet",
+        "metric": "1",
+        "cups": "1",
+        "substitution": "Habanero or ½ tsp chilli flakes",
+        "substitutionImpact": "Similar heat; habanero is a touch fruitier."
+      },
+      {
+        "name": "Tomato paste",
+        "metric": "70 g",
+        "cups": "5 tbsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Chicken stock",
+        "metric": "750 ml",
+        "cups": "3 cups",
+        "substitution": "Vegetable stock + 1 tsp smoked paprika",
+        "substitutionImpact": "Loses some depth; paprika brings back smokiness. Makes it vegetarian."
+      }
     ],
     "steps": [
-      { "text": "Blend tomatoes, bell peppers, scotch bonnet and half an onion until smooth.", "minutes": 10, "why": null },
-      { "text": "Fry sliced onion and tomato paste in oil until the paste darkens and tastes sweet.", "minutes": 8, "why": "Frying off the raw edge of tomato paste is what gives party-style depth." },
-      { "text": "Add the blended mix and simmer until thick and the oil rises to the top.", "minutes": 15, "why": "Thickening now means fluffy, separate grains later — watery sauce makes soggy rice." },
-      { "text": "Stir in stock, thyme, bay leaf and salt. Bring to a boil, then add rinsed rice.", "minutes": 5, "why": null },
-      { "text": "Cover tightly with foil + lid and cook on low until rice is tender.", "minutes": 25, "why": "Trapped steam does the cooking — resist peeking for the first 15 minutes." }
+      {
+        "text": "Blend tomatoes, bell peppers, scotch bonnet and half an onion until smooth.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Fry sliced onion and tomato paste in oil until the paste darkens and tastes sweet.",
+        "minutes": 8,
+        "why": "Frying off the raw edge of tomato paste is what gives party-style depth."
+      },
+      {
+        "text": "Add the blended mix and simmer until thick and the oil rises to the top.",
+        "minutes": 15,
+        "why": "Thickening now means fluffy, separate grains later — watery sauce makes soggy rice."
+      },
+      {
+        "text": "Stir in stock, thyme, bay leaf and salt. Bring to a boil, then add rinsed rice.",
+        "minutes": 5,
+        "why": null
+      },
+      {
+        "text": "Cover tightly with foil + lid and cook on low until rice is tender.",
+        "minutes": 25,
+        "why": "Trapped steam does the cooking — resist peeking for the first 15 minutes."
+      }
     ],
-    "pairings": ["egusi-soup", "puff-puff", "groundnut-stew"]
+    "pairings": [
+      "egusi-soup",
+      "puff-puff",
+      "groundnut-stew"
+    ]
   },
   {
     "id": "egusi-soup",
     "name": "Egusi Soup",
-    "country": "Nigeria",
-    "countryFlag": "🇳🇬",
+    "country": "Nigeria / Ghana / Cameroon",
+    "countryFlag": "🇳🇬 🇬🇭 🇨🇲",
     "category": "soups",
     "photo": "🍲",
     "image": "assets/dishes/egusi-soup.jpg",
@@ -49,35 +124,99 @@
     "cookMinutes": 35,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Gluten-free", "High-protein"],
+    "dietaryTags": [
+      "Gluten-free",
+      "High-protein"
+    ],
     "adaptationNote": "Swap smoked fish/meat for mushrooms to make it vegetarian — still savoury, less smoky depth.",
-    "blurb": "A hearty melon-seed soup eaten across Nigeria — nutty, rich, and made for scooping with swallow. A Sunday staple in many homes.",
+    "blurb": "A hearty melon-seed soup loved across Nigeria, Ghana and Cameroon — nutty, rich, and made for scooping with swallow. A Sunday staple in many homes.",
     "keyIngredients": [
-      { "name": "Egusi (melon seeds)", "photo": "🫘" },
-      { "name": "Palm oil", "photo": "🧡" },
-      { "name": "Spinach", "photo": "🥬" },
-      { "name": "Smoked fish", "photo": "🐟" }
+      {
+        "name": "Egusi (melon seeds)",
+        "photo": "🫘"
+      },
+      {
+        "name": "Palm oil",
+        "photo": "🧡"
+      },
+      {
+        "name": "Spinach",
+        "photo": "🥬"
+      },
+      {
+        "name": "Smoked fish",
+        "photo": "🐟"
+      }
     ],
     "ingredients": [
-      { "name": "Ground egusi (melon seeds)", "metric": "200 g", "cups": "1½ cups", "substitution": "Ground pumpkin seeds", "substitutionImpact": "Close in texture; slightly milder and less nutty." },
-      { "name": "Palm oil", "metric": "120 ml", "cups": "½ cup", "substitution": "Neutral oil + 1 tsp smoked paprika", "substitutionImpact": "Loses the signature colour and earthy flavour — honest downgrade." },
-      { "name": "Spinach or bitter leaf", "metric": "300 g", "cups": "6 cups", "substitution": "Kale, chopped small", "substitutionImpact": "Chewier; simmer 5 minutes longer." },
-      { "name": "Smoked mackerel", "metric": "1 whole", "cups": "about 300 g", "substitution": "Smoked turkey or mushrooms (veg)", "substitutionImpact": "Mushrooms keep it savoury but lose the smoky-fish depth." },
-      { "name": "Stock", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Ground egusi (melon seeds)",
+        "metric": "200 g",
+        "cups": "1½ cups",
+        "substitution": "Ground pumpkin seeds",
+        "substitutionImpact": "Close in texture; slightly milder and less nutty."
+      },
+      {
+        "name": "Palm oil",
+        "metric": "120 ml",
+        "cups": "½ cup",
+        "substitution": "Neutral oil + 1 tsp smoked paprika",
+        "substitutionImpact": "Loses the signature colour and earthy flavour — honest downgrade."
+      },
+      {
+        "name": "Spinach or bitter leaf",
+        "metric": "300 g",
+        "cups": "6 cups",
+        "substitution": "Kale, chopped small",
+        "substitutionImpact": "Chewier; simmer 5 minutes longer."
+      },
+      {
+        "name": "Smoked mackerel",
+        "metric": "1 whole",
+        "cups": "about 300 g",
+        "substitution": "Smoked turkey or mushrooms (veg)",
+        "substitutionImpact": "Mushrooms keep it savoury but lose the smoky-fish depth."
+      },
+      {
+        "name": "Stock",
+        "metric": "500 ml",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Mix ground egusi with a splash of water into a thick paste; set aside.", "minutes": 5, "why": null },
-      { "text": "Heat palm oil, fry onion, then add stock and bring to a simmer.", "minutes": 8, "why": null },
-      { "text": "Scoop in egusi paste in lumps and simmer without stirring.", "minutes": 12, "why": "Leaving it alone lets the egusi set into lovely crumbs instead of mush." },
-      { "text": "Stir gently, add fish, greens and seasoning. Simmer until greens are tender.", "minutes": 15, "why": null }
+      {
+        "text": "Mix ground egusi with a splash of water into a thick paste; set aside.",
+        "minutes": 5,
+        "why": null
+      },
+      {
+        "text": "Heat palm oil, fry onion, then add stock and bring to a simmer.",
+        "minutes": 8,
+        "why": null
+      },
+      {
+        "text": "Scoop in egusi paste in lumps and simmer without stirring.",
+        "minutes": 12,
+        "why": "Leaving it alone lets the egusi set into lovely crumbs instead of mush."
+      },
+      {
+        "text": "Stir gently, add fish, greens and seasoning. Simmer until greens are tender.",
+        "minutes": 15,
+        "why": null
+      }
     ],
-    "pairings": ["pounded-yam", "fufu"]
+    "pairings": [
+      "pounded-yam",
+      "fufu"
+    ]
   },
   {
     "id": "fufu",
     "name": "Fufu",
-    "country": "Ghana",
-    "countryFlag": "🇬🇭",
+    "country": "Ghana / Nigeria",
+    "countryFlag": "🇬🇭 🇳🇬",
     "category": "swallow",
     "photo": "🍙",
     "image": "assets/dishes/fufu.jpg",
@@ -85,24 +224,63 @@
     "cookMinutes": 25,
     "servingsDefault": 4,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten-free"],
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-free"
+    ],
     "adaptationNote": "Naturally vegan — just serve with a vegetarian soup like mushroom egusi.",
-    "blurb": "Soft, stretchy swallow pounded from cassava and plantain — the scoop you use for soups like egusi and groundnut stew. Eaten daily across Ghana, Nigeria and beyond.",
+    "blurb": "Soft, stretchy swallow pounded from cassava and plantain — the scoop for soups like egusi and groundnut stew. Eaten daily across Ghana, Nigeria and beyond.",
     "keyIngredients": [
-      { "name": "Cassava", "photo": "🍠" },
-      { "name": "Plantain", "photo": "🍌" },
-      { "name": "Water", "photo": "💧" }
+      {
+        "name": "Cassava",
+        "photo": "🍠"
+      },
+      {
+        "name": "Plantain",
+        "photo": "🍌"
+      },
+      {
+        "name": "Water",
+        "photo": "💧"
+      }
     ],
     "ingredients": [
-      { "name": "Cassava flour (or fufu flour)", "metric": "250 g", "cups": "2 cups", "substitution": "Instant fufu flour", "substitutionImpact": "Less stretch, much easier — a fair trade on busy days." },
-      { "name": "Water", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Cassava flour (or fufu flour)",
+        "metric": "250 g",
+        "cups": "2 cups",
+        "substitution": "Instant fufu flour",
+        "substitutionImpact": "Less stretch, much easier — a fair trade on busy days."
+      },
+      {
+        "name": "Water",
+        "metric": "500 ml",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Bring water to a boil, then whisk in the flour a little at a time.", "minutes": 5, "why": null },
-      { "text": "Stir vigorously with a wooden spoon until smooth and stretchy.", "minutes": 10, "why": "Elbow grease now is what gives fufu its pull — keep turning, don't stop." },
-      { "text": "Wet your hands, shape into balls and serve warm with soup.", "minutes": 5, "why": null }
+      {
+        "text": "Bring water to a boil, then whisk in the flour a little at a time.",
+        "minutes": 5,
+        "why": null
+      },
+      {
+        "text": "Stir vigorously with a wooden spoon until smooth and stretchy.",
+        "minutes": 10,
+        "why": "Elbow grease now is what gives fufu its pull — keep turning, don't stop."
+      },
+      {
+        "text": "Wet your hands, shape into balls and serve warm with soup.",
+        "minutes": 5,
+        "why": null
+      }
     ],
-    "pairings": ["egusi-soup", "groundnut-stew"]
+    "pairings": [
+      "egusi-soup",
+      "groundnut-stew"
+    ]
   },
   {
     "id": "waakye",
@@ -116,27 +294,81 @@
     "cookMinutes": 60,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan option", "High-protein"],
+    "dietaryTags": [
+      "Vegan option",
+      "High-protein"
+    ],
     "adaptationNote": "Skip egg/fish sides and load up beans + shito for a vegan plate.",
     "blurb": "Ghana's famous rice-and-beans, cooked with sorghum leaves for its brick-red colour. A classic street breakfast wrapped in banana leaves with all the extras.",
     "keyIngredients": [
-      { "name": "Rice", "photo": "🍚" },
-      { "name": "Black-eyed beans", "photo": "🫘" },
-      { "name": "Sorghum leaves", "photo": "🍂" },
-      { "name": "Spaghetti", "photo": "🍝" }
+      {
+        "name": "Rice",
+        "photo": "🍚"
+      },
+      {
+        "name": "Black-eyed beans",
+        "photo": "🫘"
+      },
+      {
+        "name": "Sorghum leaves",
+        "photo": "🍂"
+      },
+      {
+        "name": "Spaghetti",
+        "photo": "🍝"
+      }
     ],
     "ingredients": [
-      { "name": "Black-eyed beans", "metric": "250 g", "cups": "1½ cups", "substitution": "Tinned black-eyed beans (drained)", "substitutionImpact": "Softer; skip the pre-boil and shorten cooking by ~20 min." },
-      { "name": "Rice", "metric": "400 g", "cups": "2 cups", "substitution": null, "substitutionImpact": null },
-      { "name": "Dried sorghum (waakye) leaves", "metric": "4 leaves", "cups": "4 leaves", "substitution": "1 tsp baking soda for colour only", "substitutionImpact": "You get a brownish tint, not the classic red — flavour mostly unchanged." },
-      { "name": "Spaghetti (optional, for serving)", "metric": "100 g", "cups": "1 handful", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Black-eyed beans",
+        "metric": "250 g",
+        "cups": "1½ cups",
+        "substitution": "Tinned black-eyed beans (drained)",
+        "substitutionImpact": "Softer; skip the pre-boil and shorten cooking by ~20 min."
+      },
+      {
+        "name": "Rice",
+        "metric": "400 g",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Dried sorghum (waakye) leaves",
+        "metric": "4 leaves",
+        "cups": "4 leaves",
+        "substitution": "1 tsp baking soda for colour only",
+        "substitutionImpact": "You get a brownish tint, not the classic red — flavour mostly unchanged."
+      },
+      {
+        "name": "Spaghetti (optional, for serving)",
+        "metric": "100 g",
+        "cups": "1 handful",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Boil beans with sorghum leaves until almost tender.", "minutes": 30, "why": null },
-      { "text": "Remove leaves, add rice, salt and water. Cover and cook on low.", "minutes": 25, "why": "Beans need a head start or the rice turns to mush before they soften." },
-      { "text": "Rest 10 minutes, fluff, and serve with extras (egg, shito, spaghetti).", "minutes": 10, "why": null }
+      {
+        "text": "Boil beans with sorghum leaves until almost tender.",
+        "minutes": 30,
+        "why": null
+      },
+      {
+        "text": "Remove leaves, add rice, salt and water. Cover and cook on low.",
+        "minutes": 25,
+        "why": "Beans need a head start or the rice turns to mush before they soften."
+      },
+      {
+        "text": "Rest 10 minutes, fluff, and serve with extras (egg, shito, spaghetti).",
+        "minutes": 10,
+        "why": null
+      }
     ],
-    "pairings": ["kelewele", "puff-puff"]
+    "pairings": [
+      "kelewele",
+      "puff-puff"
+    ]
   },
   {
     "id": "puff-puff",
@@ -150,34 +382,94 @@
     "cookMinutes": 70,
     "servingsDefault": 6,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Vegetarian"],
+    "dietaryTags": [
+      "Vegan",
+      "Vegetarian"
+    ],
     "adaptationNote": "Naturally vegan — fry in fresh vegetable oil.",
     "blurb": "Golden, pillowy fried dough balls — the snack of every Nigerian party and street corner. Best eaten warm, standing up, with friends.",
     "keyIngredients": [
-      { "name": "Flour", "photo": "🌾" },
-      { "name": "Yeast", "photo": "🍞" },
-      { "name": "Sugar", "photo": "🍬" },
-      { "name": "Nutmeg", "photo": "🌰" }
+      {
+        "name": "Flour",
+        "photo": "🌾"
+      },
+      {
+        "name": "Yeast",
+        "photo": "🍞"
+      },
+      {
+        "name": "Sugar",
+        "photo": "🍬"
+      },
+      {
+        "name": "Nutmeg",
+        "photo": "🌰"
+      }
     ],
     "ingredients": [
-      { "name": "Plain flour", "metric": "500 g", "cups": "4 cups", "substitution": null, "substitutionImpact": null },
-      { "name": "Instant yeast", "metric": "7 g", "cups": "2¼ tsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Sugar", "metric": "100 g", "cups": "½ cup", "substitution": null, "substitutionImpact": null },
-      { "name": "Ground nutmeg", "metric": "1 tsp", "cups": "1 tsp", "substitution": "Vanilla + pinch of cinnamon", "substitutionImpact": "Less traditional warmth; still sweet and lovely." },
-      { "name": "Warm water", "metric": "450 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Plain flour",
+        "metric": "500 g",
+        "cups": "4 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Instant yeast",
+        "metric": "7 g",
+        "cups": "2¼ tsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Sugar",
+        "metric": "100 g",
+        "cups": "½ cup",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Ground nutmeg",
+        "metric": "1 tsp",
+        "cups": "1 tsp",
+        "substitution": "Vanilla + pinch of cinnamon",
+        "substitutionImpact": "Less traditional warmth; still sweet and lovely."
+      },
+      {
+        "name": "Warm water",
+        "metric": "450 ml",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Mix everything into a thick batter. Cover and proof until doubled and bubbly.", "minutes": 60, "why": "A full, bubbly rise is what makes them hollow-light instead of dense." },
-      { "text": "Heat oil to 170–175°C. Scoop batter with oiled hands or a spoon.", "minutes": 10, "why": null },
-      { "text": "Fry in batches, turning, until deep golden all over. Drain on paper.", "minutes": 15, "why": "Crowding the pot drops the oil temperature and makes them greasy." }
+      {
+        "text": "Mix everything into a thick batter. Cover and proof until doubled and bubbly.",
+        "minutes": 60,
+        "why": "A full, bubbly rise is what makes them hollow-light instead of dense."
+      },
+      {
+        "text": "Heat oil to 170–175°C. Scoop batter with oiled hands or a spoon.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Fry in batches, turning, until deep golden all over. Drain on paper.",
+        "minutes": 15,
+        "why": "Crowding the pot drops the oil temperature and makes them greasy."
+      }
     ],
-    "pairings": ["akara", "jollof-rice"]
+    "pairings": [
+      "akara",
+      "jollof-rice"
+    ]
   },
   {
     "id": "groundnut-stew",
     "name": "Groundnut Stew",
-    "country": "Senegal",
-    "countryFlag": "🇸🇳",
+    "country": "Senegal / Mali",
+    "countryFlag": "🇸🇳 🇲🇱",
     "category": "soups",
     "photo": "🥜",
     "image": "assets/dishes/groundnut-stew.jpg",
@@ -185,28 +477,88 @@
     "cookMinutes": 40,
     "servingsDefault": 4,
     "difficulty": "Easy",
-    "dietaryTags": ["Gluten-free", "Dairy-free"],
+    "dietaryTags": [
+      "Gluten-free",
+      "Dairy-free"
+    ],
     "adaptationNote": "Swap chicken for sweet potato + chickpeas to make it vegetarian — add an extra spoon of peanut butter.",
-    "blurb": "Known as mafé across Senegal and Mali — a comforting peanut stew, gently sweet and savoury, eaten with rice or fufu on family evenings.",
+    "blurb": "Known as mafe across Senegal and Mali — a comforting peanut stew, gently sweet and savoury. Make it for family evenings with rice or fufu.",
     "keyIngredients": [
-      { "name": "Peanuts", "photo": "🥜" },
-      { "name": "Chicken", "photo": "🍗" },
-      { "name": "Tomato paste", "photo": "🍅" },
-      { "name": "Sweet potato", "photo": "🍠" }
+      {
+        "name": "Peanuts",
+        "photo": "🥜"
+      },
+      {
+        "name": "Chicken",
+        "photo": "🍗"
+      },
+      {
+        "name": "Tomato paste",
+        "photo": "🍅"
+      },
+      {
+        "name": "Sweet potato",
+        "photo": "🍠"
+      }
     ],
     "ingredients": [
-      { "name": "Natural peanut butter (no sugar)", "metric": "200 g", "cups": "¾ cup", "substitution": "Blitzed roasted peanuts", "substitutionImpact": "Grainier texture, deeper roast flavour — very good." },
-      { "name": "Chicken pieces", "metric": "700 g", "cups": "about 8 pieces", "substitution": "Sweet potato + chickpeas (veg)", "substitutionImpact": "Lighter but still hearty; add an extra spoon of peanut butter." },
-      { "name": "Tomato paste", "metric": "70 g", "cups": "5 tbsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Carrots & sweet potato", "metric": "400 g", "cups": "3 cups chopped", "substitution": "Pumpkin or butternut", "substitutionImpact": "Sweeter and softer — lovely, just watch the simmer time." },
-      { "name": "Stock", "metric": "1 litre", "cups": "4 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Natural peanut butter (no sugar)",
+        "metric": "200 g",
+        "cups": "¾ cup",
+        "substitution": "Blitzed roasted peanuts",
+        "substitutionImpact": "Grainier texture, deeper roast flavour — very good."
+      },
+      {
+        "name": "Chicken pieces",
+        "metric": "700 g",
+        "cups": "about 8 pieces",
+        "substitution": "Sweet potato + chickpeas (veg)",
+        "substitutionImpact": "Lighter but still hearty; add an extra spoon of peanut butter."
+      },
+      {
+        "name": "Tomato paste",
+        "metric": "70 g",
+        "cups": "5 tbsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Carrots & sweet potato",
+        "metric": "400 g",
+        "cups": "3 cups chopped",
+        "substitution": "Pumpkin or butternut",
+        "substitutionImpact": "Sweeter and softer — lovely, just watch the simmer time."
+      },
+      {
+        "name": "Stock",
+        "metric": "1 litre",
+        "cups": "4 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Brown the chicken in oil; set aside.", "minutes": 10, "why": null },
-      { "text": "Fry onion and tomato paste, then whisk in stock and peanut butter until smooth.", "minutes": 10, "why": "Whisking bit by bit stops the peanut splitting later." },
-      { "text": "Return chicken plus vegetables. Simmer until tender and oil glistens on top.", "minutes": 30, "why": null }
+      {
+        "text": "Brown the chicken in oil; set aside.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Fry onion and tomato paste, then whisk in stock and peanut butter until smooth.",
+        "minutes": 10,
+        "why": "Whisking bit by bit stops the peanut splitting later."
+      },
+      {
+        "text": "Return chicken plus vegetables. Simmer until tender and oil glistens on top.",
+        "minutes": 30,
+        "why": null
+      }
     ],
-    "pairings": ["fufu", "banku"]
+    "pairings": [
+      "fufu",
+      "banku"
+    ]
   },
   {
     "id": "thieboudienne",
@@ -220,31 +572,105 @@
     "cookMinutes": 60,
     "servingsDefault": 6,
     "difficulty": "Medium",
-    "dietaryTags": ["Dairy-free", "High-protein"],
+    "dietaryTags": [
+      "Dairy-free",
+      "High-protein"
+    ],
     "adaptationNote": "Swap fish for cauliflower steaks + chickpeas and use vegetable stock for a vegetarian pot — keep the tamarind, it carries the flavour.",
-    "blurb": "Senegal's proud national dish — broken rice cooked in a rich tomato-tamarind broth with fish and root vegetables. Served communally, eaten with joy.",
+    "blurb": "Thieboudienne — Senegal's proud national dish. Broken rice soaks up tomato-tamarind broth with fish and roots. Make it for your Sunday family table and eat together while it is hot.",
     "keyIngredients": [
-      { "name": "Broken rice", "photo": "🍚" },
-      { "name": "Sea bass or grouper", "photo": "🐟" },
-      { "name": "Tamarind", "photo": "🫘" },
-      { "name": "Cassava", "photo": "🍠" }
+      {
+        "name": "Broken rice",
+        "photo": "🍚"
+      },
+      {
+        "name": "Sea bass or grouper",
+        "photo": "🐟"
+      },
+      {
+        "name": "Tamarind",
+        "photo": "🫘"
+      },
+      {
+        "name": "Cassava",
+        "photo": "🍠"
+      }
     ],
     "ingredients": [
-      { "name": "Broken rice (or jasmine)", "metric": "600 g", "cups": "3 cups", "substitution": "Jasmine rice", "substitutionImpact": "Less traditional bite; jasmine soaks up the broth beautifully anyway." },
-      { "name": "Firm white fish steaks", "metric": "800 g", "cups": "6 steaks", "substitution": "Sea bass, grouper or red snapper", "substitutionImpact": "Any firm fish holds together; avoid soft fillets that flake apart." },
-      { "name": "Tomato paste", "metric": "100 g", "cups": "7 tbsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Tamarind pulp", "metric": "2 tbsp", "cups": "2 tbsp", "substitution": "Juice of 1 lime + 1 tsp extra tomato paste", "substitutionImpact": "Brighter and less deep, but keeps the needed sour lift." },
-      { "name": "Cassava, carrot & cabbage", "metric": "600 g mixed", "cups": "5 cups chopped", "substitution": "Sweet potato + cabbage only", "substitutionImpact": "Softer and sweeter; still very good." },
-      { "name": "Fish or vegetable stock", "metric": "1.2 litres", "cups": "5 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Broken rice (or jasmine)",
+        "metric": "600 g",
+        "cups": "3 cups",
+        "substitution": "Jasmine rice",
+        "substitutionImpact": "Less traditional bite; jasmine soaks up the broth beautifully anyway."
+      },
+      {
+        "name": "Firm white fish steaks",
+        "metric": "800 g",
+        "cups": "6 steaks",
+        "substitution": "Sea bass, grouper or red snapper",
+        "substitutionImpact": "Any firm fish holds together; avoid soft fillets that flake apart."
+      },
+      {
+        "name": "Tomato paste",
+        "metric": "100 g",
+        "cups": "7 tbsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Tamarind pulp",
+        "metric": "2 tbsp",
+        "cups": "2 tbsp",
+        "substitution": "Juice of 1 lime + 1 tsp extra tomato paste",
+        "substitutionImpact": "Brighter and less deep, but keeps the needed sour lift."
+      },
+      {
+        "name": "Cassava, carrot & cabbage",
+        "metric": "600 g mixed",
+        "cups": "5 cups chopped",
+        "substitution": "Sweet potato + cabbage only",
+        "substitutionImpact": "Softer and sweeter; still very good."
+      },
+      {
+        "name": "Fish or vegetable stock",
+        "metric": "1.2 litres",
+        "cups": "5 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Season fish, sear in oil until golden, and set aside.", "minutes": 10, "why": "Searing first keeps the fish in one piece through the long simmer." },
-      { "text": "Fry onion, tomato paste and tamarind in the same oil until deep red and sweet.", "minutes": 10, "why": null },
-      { "text": "Add stock and root vegetables; simmer until just tender, then lift vegetables out.", "minutes": 20, "why": "Cooking veg separately stops them collapsing while the rice finishes." },
-      { "text": "Add rice to the broth, cover and steam on low until tender.", "minutes": 25, "why": null },
-      { "text": "Return fish and vegetables to warm through, then serve from one big dish.", "minutes": 5, "why": null }
+      {
+        "text": "Season fish, sear in oil until golden, and set aside.",
+        "minutes": 10,
+        "why": "Searing first keeps the fish in one piece through the long simmer."
+      },
+      {
+        "text": "Fry onion, tomato paste and tamarind in the same oil until deep red and sweet.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Add stock and root vegetables; simmer until just tender, then lift vegetables out.",
+        "minutes": 20,
+        "why": "Cooking veg separately stops them collapsing while the rice finishes."
+      },
+      {
+        "text": "Add rice to the broth, cover and steam on low until tender.",
+        "minutes": 25,
+        "why": null
+      },
+      {
+        "text": "Return fish and vegetables to warm through, then serve from one big dish.",
+        "minutes": 5,
+        "why": null
+      }
     ],
-    "pairings": ["chicken-yassa", "fataya"]
+    "pairings": [
+      "chicken-yassa",
+      "fataya"
+    ]
   },
   {
     "id": "chicken-yassa",
@@ -258,29 +684,93 @@
     "cookMinutes": 45,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Gluten-free", "Dairy-free"],
+    "dietaryTags": [
+      "Gluten-free",
+      "Dairy-free"
+    ],
     "adaptationNote": "Use big mushrooms + extra onions instead of chicken for a vegetarian yassa — the lemon-mustard sauce is the star anyway.",
     "blurb": "Chicken marinated in lemon and mustard with a mountain of caramelised onions — sharp, savoury and comforting over rice. A Casamance classic.",
     "keyIngredients": [
-      { "name": "Chicken", "photo": "🍗" },
-      { "name": "Onions", "photo": "🧅" },
-      { "name": "Dijon mustard", "photo": "🫙" },
-      { "name": "Lemon", "photo": "🍋" }
+      {
+        "name": "Chicken",
+        "photo": "🍗"
+      },
+      {
+        "name": "Onions",
+        "photo": "🧅"
+      },
+      {
+        "name": "Dijon mustard",
+        "photo": "🫙"
+      },
+      {
+        "name": "Lemon",
+        "photo": "🍋"
+      }
     ],
     "ingredients": [
-      { "name": "Chicken thighs", "metric": "800 g", "cups": "8 thighs", "substitution": "Big flat mushrooms (veg)", "substitutionImpact": "Less meaty but the tangy onion sauce still shines." },
-      { "name": "Onions, thinly sliced", "metric": "600 g", "cups": "5 large", "substitution": null, "substitutionImpact": null },
-      { "name": "Dijon mustard", "metric": "3 tbsp", "cups": "3 tbsp", "substitution": "Mild yellow mustard", "substitutionImpact": "Softer bite; add a squeeze more lemon." },
-      { "name": "Lemons, juiced", "metric": "3", "cups": "⅓ cup juice", "substitution": "Lime juice", "substitutionImpact": "Sharper; use a little less." },
-      { "name": "Stock", "metric": "250 ml", "cups": "1 cup", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Chicken thighs",
+        "metric": "800 g",
+        "cups": "8 thighs",
+        "substitution": "Big flat mushrooms (veg)",
+        "substitutionImpact": "Less meaty but the tangy onion sauce still shines."
+      },
+      {
+        "name": "Onions, thinly sliced",
+        "metric": "600 g",
+        "cups": "5 large",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Dijon mustard",
+        "metric": "3 tbsp",
+        "cups": "3 tbsp",
+        "substitution": "Mild yellow mustard",
+        "substitutionImpact": "Softer bite; add a squeeze more lemon."
+      },
+      {
+        "name": "Lemons, juiced",
+        "metric": "3",
+        "cups": "⅓ cup juice",
+        "substitution": "Lime juice",
+        "substitutionImpact": "Sharper; use a little less."
+      },
+      {
+        "name": "Stock",
+        "metric": "250 ml",
+        "cups": "1 cup",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Marinate chicken with lemon, mustard, salt and half the onions for at least 1 hour (overnight is best).", "minutes": 60, "why": "The acid tenderises and the mustard flavour soaks right in — do not rush this." },
-      { "text": "Grill or sear the chicken until browned; set aside.", "minutes": 12, "why": null },
-      { "text": "Caramelise all onions in oil until soft and golden, then add marinade juices and stock.", "minutes": 15, "why": null },
-      { "text": "Return chicken and simmer until cooked through and the sauce is silky.", "minutes": 20, "why": null }
+      {
+        "text": "Marinate chicken with lemon, mustard, salt and half the onions for at least 1 hour (overnight is best).",
+        "minutes": 60,
+        "why": "The acid tenderises and the mustard flavour soaks right in — do not rush this."
+      },
+      {
+        "text": "Grill or sear the chicken until browned; set aside.",
+        "minutes": 12,
+        "why": null
+      },
+      {
+        "text": "Caramelise all onions in oil until soft and golden, then add marinade juices and stock.",
+        "minutes": 15,
+        "why": null
+      },
+      {
+        "text": "Return chicken and simmer until cooked through and the sauce is silky.",
+        "minutes": 20,
+        "why": null
+      }
     ],
-    "pairings": ["thieboudienne", "waakye"]
+    "pairings": [
+      "thieboudienne",
+      "waakye"
+    ]
   },
   {
     "id": "fataya",
@@ -294,29 +784,92 @@
     "cookMinutes": 25,
     "servingsDefault": 6,
     "difficulty": "Medium",
-    "dietaryTags": ["Dairy-free"],
+    "dietaryTags": [
+      "Dairy-free"
+    ],
     "adaptationNote": "Fill with spiced lentils instead of fish for a vegetarian version — same crispy pastry, hearty inside.",
     "blurb": "Crisp half-moon pastries stuffed with spiced fish or meat — the snack of Dakar street stalls and Ramadan evenings. Best hot, with lime.",
     "keyIngredients": [
-      { "name": "Flour", "photo": "🌾" },
-      { "name": "Tinned sardines or minced beef", "photo": "🐟" },
-      { "name": "Onion & parsley", "photo": "🧅" },
-      { "name": "Chilli", "photo": "🌶️" }
+      {
+        "name": "Flour",
+        "photo": "🌾"
+      },
+      {
+        "name": "Tinned sardines or minced beef",
+        "photo": "🐟"
+      },
+      {
+        "name": "Onion & parsley",
+        "photo": "🧅"
+      },
+      {
+        "name": "Chilli",
+        "photo": "🌶️"
+      }
     ],
     "ingredients": [
-      { "name": "Plain flour", "metric": "400 g", "cups": "3¼ cups", "substitution": null, "substitutionImpact": null },
-      { "name": "Tinned sardines, drained", "metric": "2 tins", "cups": "about 240 g", "substitution": "Minced beef or cooked lentils", "substitutionImpact": "Beef is milder; lentils make it vegetarian and still hearty." },
-      { "name": "Onion & parsley, chopped", "metric": "1 onion + handful", "cups": "1½ cups", "substitution": null, "substitutionImpact": null },
-      { "name": "Scotch bonnet, minced", "metric": "½", "cups": "1 tsp minced", "substitution": "¼ tsp chilli flakes", "substitutionImpact": "Easier to dose; same warmth." },
-      { "name": "Oil for deep frying", "metric": "750 ml", "cups": "3 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Plain flour",
+        "metric": "400 g",
+        "cups": "3¼ cups",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Tinned sardines, drained",
+        "metric": "2 tins",
+        "cups": "about 240 g",
+        "substitution": "Minced beef or cooked lentils",
+        "substitutionImpact": "Beef is milder; lentils make it vegetarian and still hearty."
+      },
+      {
+        "name": "Onion & parsley, chopped",
+        "metric": "1 onion + handful",
+        "cups": "1½ cups",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Scotch bonnet, minced",
+        "metric": "½",
+        "cups": "1 tsp minced",
+        "substitution": "¼ tsp chilli flakes",
+        "substitutionImpact": "Easier to dose; same warmth."
+      },
+      {
+        "name": "Oil for deep frying",
+        "metric": "750 ml",
+        "cups": "3 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Mix flour, salt, oil and water into a soft dough; rest 20 minutes.", "minutes": 25, "why": "Resting relaxes the dough so it rolls thin without springing back." },
-      { "text": "Mash filling with onion, parsley, chilli and seasoning.", "minutes": 8, "why": null },
-      { "text": "Roll, cut rounds, fill, fold and crimp edges well.", "minutes": 15, "why": "Seal firmly or they burst open in the hot oil." },
-      { "text": "Fry in batches until crisp and golden; drain on paper.", "minutes": 15, "why": null }
+      {
+        "text": "Mix flour, salt, oil and water into a soft dough; rest 20 minutes.",
+        "minutes": 25,
+        "why": "Resting relaxes the dough so it rolls thin without springing back."
+      },
+      {
+        "text": "Mash filling with onion, parsley, chilli and seasoning.",
+        "minutes": 8,
+        "why": null
+      },
+      {
+        "text": "Roll, cut rounds, fill, fold and crimp edges well.",
+        "minutes": 15,
+        "why": "Seal firmly or they burst open in the hot oil."
+      },
+      {
+        "text": "Fry in batches until crisp and golden; drain on paper.",
+        "minutes": 15,
+        "why": null
+      }
     ],
-    "pairings": ["thieboudienne", "puff-puff"]
+    "pairings": [
+      "thieboudienne",
+      "puff-puff"
+    ]
   },
   {
     "id": "akara",
@@ -330,28 +883,89 @@
     "cookMinutes": 20,
     "servingsDefault": 4,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten-free", "High-protein"],
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-free",
+      "High-protein"
+    ],
     "adaptationNote": "Naturally vegan and gluten-free — just keep the frying oil fresh and hot.",
-    "blurb": "Crisp black-eyed-bean fritters with a fluffy middle — Saturday-morning royalty with pap (ogi), and a party small-chop favourite.",
+    "blurb": "Crisp black-eyed-bean fritters with a fluffy middle — make them Saturday morning with hot pap (ogi), or for friends as small chops. Best eaten hot.",
     "keyIngredients": [
-      { "name": "Black-eyed beans", "photo": "🫘" },
-      { "name": "Onion", "photo": "🧅" },
-      { "name": "Scotch bonnet", "photo": "🌶️" },
-      { "name": "Palm or vegetable oil", "photo": "🧡" }
+      {
+        "name": "Black-eyed beans",
+        "photo": "🫘"
+      },
+      {
+        "name": "Onion",
+        "photo": "🧅"
+      },
+      {
+        "name": "Scotch bonnet",
+        "photo": "🌶️"
+      },
+      {
+        "name": "Palm or vegetable oil",
+        "photo": "🧡"
+      }
     ],
     "ingredients": [
-      { "name": "Dried black-eyed beans, soaked & peeled", "metric": "300 g dried", "cups": "2 cups dried", "substitution": "Frozen peeled beans, defrosted", "substitutionImpact": "Skips the peeling labour; same result." },
-      { "name": "Onion", "metric": "1 medium", "cups": "1 cup chopped", "substitution": null, "substitutionImpact": null },
-      { "name": "Scotch bonnet", "metric": "½", "cups": "1 tsp minced", "substitution": "¼ tsp chilli flakes", "substitutionImpact": "Same warmth, easier to control." },
-      { "name": "Salt", "metric": "1½ tsp", "cups": "1½ tsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Oil for deep frying", "metric": "750 ml", "cups": "3 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Dried black-eyed beans, soaked & peeled",
+        "metric": "300 g dried",
+        "cups": "2 cups dried",
+        "substitution": "Frozen peeled beans, defrosted",
+        "substitutionImpact": "Skips the peeling labour; same result."
+      },
+      {
+        "name": "Onion",
+        "metric": "1 medium",
+        "cups": "1 cup chopped",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Scotch bonnet",
+        "metric": "½",
+        "cups": "1 tsp minced",
+        "substitution": "¼ tsp chilli flakes",
+        "substitutionImpact": "Same warmth, easier to control."
+      },
+      {
+        "name": "Salt",
+        "metric": "1½ tsp",
+        "cups": "1½ tsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Oil for deep frying",
+        "metric": "750 ml",
+        "cups": "3 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Blend soaked peeled beans with onion and pepper into a thick, fluffy batter — barely any water.", "minutes": 10, "why": "Too much water makes them soak up oil and fall apart; thick batter fries crisp." },
-      { "text": "Whisk in salt and rest 5 minutes.", "minutes": 5, "why": null },
-      { "text": "Scoop spoonfuls into hot oil and fry, turning, until deep golden.", "minutes": 15, "why": null }
+      {
+        "text": "Blend soaked peeled beans with onion and pepper into a thick, fluffy batter — barely any water.",
+        "minutes": 10,
+        "why": "Too much water makes them soak up oil and fall apart; thick batter fries crisp."
+      },
+      {
+        "text": "Whisk in salt and rest 5 minutes.",
+        "minutes": 5,
+        "why": null
+      },
+      {
+        "text": "Scoop spoonfuls into hot oil and fry, turning, until deep golden.",
+        "minutes": 15,
+        "why": null
+      }
     ],
-    "pairings": ["puff-puff", "waakye"]
+    "pairings": [
+      "puff-puff",
+      "waakye"
+    ]
   },
   {
     "id": "efo-riro",
@@ -365,29 +979,93 @@
     "cookMinutes": 30,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Gluten-free", "High-protein"],
+    "dietaryTags": [
+      "Gluten-free",
+      "High-protein"
+    ],
     "adaptationNote": "Swap assorted meat and smoked fish for mushrooms to make this vegetarian — keep the palm oil and locust beans for depth.",
-    "blurb": "A rich Yoruba spinach stew with palm oil, peppers and assorted meats — glossy, deeply savoury, and made for pounded yam.",
+    "blurb": "A rich Yoruba spinach stew with palm oil, peppers and assorted meats — glossy and deeply savoury. Scoop it with pounded yam, just like home.",
     "keyIngredients": [
-      { "name": "Spinach", "photo": "🥬" },
-      { "name": "Palm oil", "photo": "🧡" },
-      { "name": "Locust beans (iru)", "photo": "🫘" },
-      { "name": "Assorted meat & fish", "photo": "🍖" }
+      {
+        "name": "Spinach",
+        "photo": "🥬"
+      },
+      {
+        "name": "Palm oil",
+        "photo": "🧡"
+      },
+      {
+        "name": "Locust beans (iru)",
+        "photo": "🫘"
+      },
+      {
+        "name": "Assorted meat & fish",
+        "photo": "🍖"
+      }
     ],
     "ingredients": [
-      { "name": "Fresh spinach", "metric": "500 g", "cups": "10 cups", "substitution": "Frozen spinach, squeezed dry", "substitutionImpact": "Softer texture; squeeze very dry or the stew waters out." },
-      { "name": "Palm oil", "metric": "120 ml", "cups": "½ cup", "substitution": "Neutral oil + 1 tsp smoked paprika", "substitutionImpact": "Loses signature colour and earthiness — honest downgrade." },
-      { "name": "Locust beans (iru)", "metric": "2 tbsp", "cups": "2 tbsp", "substitution": "1 tbsp miso paste", "substitutionImpact": "Different but similarly deep and savoury." },
-      { "name": "Assorted meat + smoked fish", "metric": "500 g", "cups": "about 4 cups", "substitution": "Mixed mushrooms (veg)", "substitutionImpact": "Lighter; keep palm oil and iru for the soul of the dish." },
-      { "name": "Blended pepper mix", "metric": "200 ml", "cups": "¾ cup", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Fresh spinach",
+        "metric": "500 g",
+        "cups": "10 cups",
+        "substitution": "Frozen spinach, squeezed dry",
+        "substitutionImpact": "Softer texture; squeeze very dry or the stew waters out."
+      },
+      {
+        "name": "Palm oil",
+        "metric": "120 ml",
+        "cups": "½ cup",
+        "substitution": "Neutral oil + 1 tsp smoked paprika",
+        "substitutionImpact": "Loses signature colour and earthiness — honest downgrade."
+      },
+      {
+        "name": "Locust beans (iru)",
+        "metric": "2 tbsp",
+        "cups": "2 tbsp",
+        "substitution": "1 tbsp miso paste",
+        "substitutionImpact": "Different but similarly deep and savoury."
+      },
+      {
+        "name": "Assorted meat + smoked fish",
+        "metric": "500 g",
+        "cups": "about 4 cups",
+        "substitution": "Mixed mushrooms (veg)",
+        "substitutionImpact": "Lighter; keep palm oil and iru for the soul of the dish."
+      },
+      {
+        "name": "Blended pepper mix",
+        "metric": "200 ml",
+        "cups": "¾ cup",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Boil meats until tender; reserve stock. Blanch spinach, squeeze dry, chop roughly.", "minutes": 15, "why": "Dry greens keep the stew glossy instead of watery." },
-      { "text": "Fry pepper mix in palm oil until the oil floats and the sourness cooks off.", "minutes": 10, "why": null },
-      { "text": "Add meats, fish, iru and a splash of stock; simmer to marry.", "minutes": 8, "why": null },
-      { "text": "Fold in spinach and simmer briefly until just wilted and glossy.", "minutes": 5, "why": "Greens go in last so they stay bright, not grey." }
+      {
+        "text": "Boil meats until tender; reserve stock. Blanch spinach, squeeze dry, chop roughly.",
+        "minutes": 15,
+        "why": "Dry greens keep the stew glossy instead of watery."
+      },
+      {
+        "text": "Fry pepper mix in palm oil until the oil floats and the sourness cooks off.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Add meats, fish, iru and a splash of stock; simmer to marry.",
+        "minutes": 8,
+        "why": null
+      },
+      {
+        "text": "Fold in spinach and simmer briefly until just wilted and glossy.",
+        "minutes": 5,
+        "why": "Greens go in last so they stay bright, not grey."
+      }
     ],
-    "pairings": ["pounded-yam", "fufu"]
+    "pairings": [
+      "pounded-yam",
+      "fufu"
+    ]
   },
   {
     "id": "pounded-yam",
@@ -401,23 +1079,59 @@
     "cookMinutes": 30,
     "servingsDefault": 4,
     "difficulty": "Medium",
-    "dietaryTags": ["Vegan", "Gluten-free"],
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-free"
+    ],
     "adaptationNote": "Naturally vegan — pair with a vegetarian soup like mushroom efo riro.",
-    "blurb": "The king of swallows — smooth, stretchy pounded yam, the proud partner of egusi and efo riro at celebrations and Sunday tables.",
+    "blurb": "Smooth, stretchy pounded yam — the partner for egusi and efo riro at celebrations and Sunday tables. Pound it well and serve it warm.",
     "keyIngredients": [
-      { "name": "White yam", "photo": "🍠" },
-      { "name": "Water", "photo": "💧" }
+      {
+        "name": "White yam",
+        "photo": "🍠"
+      },
+      {
+        "name": "Water",
+        "photo": "💧"
+      }
     ],
     "ingredients": [
-      { "name": "White yam (puna), peeled & cubed", "metric": "1 kg", "cups": "1 medium tuber", "substitution": "Poundo yam flour", "substitutionImpact": "Close and much quicker; slightly less stretch, still smooth." },
-      { "name": "Water", "metric": "as needed", "cups": "as needed", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "White yam (puna), peeled & cubed",
+        "metric": "1 kg",
+        "cups": "1 medium tuber",
+        "substitution": "Poundo yam flour",
+        "substitutionImpact": "Close and much quicker; slightly less stretch, still smooth."
+      },
+      {
+        "name": "Water",
+        "metric": "as needed",
+        "cups": "as needed",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Boil yam in salted water until very tender — a knife slides through easily.", "minutes": 20, "why": null },
-      { "text": "Pound (or beat with a stand mixer) adding splashes of hot water until completely smooth and stretchy.", "minutes": 12, "why": "Lumps are the enemy — keep going until it pulls like dough." },
-      { "text": "Mould into balls with wet hands and serve hot with soup.", "minutes": 3, "why": null }
+      {
+        "text": "Boil yam in salted water until very tender — a knife slides through easily.",
+        "minutes": 20,
+        "why": null
+      },
+      {
+        "text": "Pound (or beat with a stand mixer) adding splashes of hot water until completely smooth and stretchy.",
+        "minutes": 12,
+        "why": "Lumps are the enemy — keep going until it pulls like dough."
+      },
+      {
+        "text": "Mould into balls with wet hands and serve hot with soup.",
+        "minutes": 3,
+        "why": null
+      }
     ],
-    "pairings": ["egusi-soup", "efo-riro"]
+    "pairings": [
+      "egusi-soup",
+      "efo-riro"
+    ]
   },
   {
     "id": "banku",
@@ -431,25 +1145,70 @@
     "cookMinutes": 40,
     "servingsDefault": 4,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten-free"],
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-free"
+    ],
     "adaptationNote": "Naturally vegan — serve with vegetarian groundnut stew or okra.",
     "blurb": "Ghana's tangy fermented corn-and-cassava dough balls — soft, stretchy and made for tilapia, okra stew or groundnut soup.",
     "keyIngredients": [
-      { "name": "Corn dough", "photo": "🌽" },
-      { "name": "Cassava dough", "photo": "🍠" },
-      { "name": "Salt & water", "photo": "💧" }
+      {
+        "name": "Corn dough",
+        "photo": "🌽"
+      },
+      {
+        "name": "Cassava dough",
+        "photo": "🍠"
+      },
+      {
+        "name": "Salt & water",
+        "photo": "💧"
+      }
     ],
     "ingredients": [
-      { "name": "Fermented corn dough", "metric": "400 g", "cups": "2 cups", "substitution": "Fine cornmeal + 1 tbsp vinegar, rested 1 hour", "substitutionImpact": "Milder tang; close enough for a first try." },
-      { "name": "Cassava dough", "metric": "150 g", "cups": "¾ cup", "substitution": "More corn dough", "substitutionImpact": "Less stretch, still soft and tasty." },
-      { "name": "Salted water", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Fermented corn dough",
+        "metric": "400 g",
+        "cups": "2 cups",
+        "substitution": "Fine cornmeal + 1 tbsp vinegar, rested 1 hour",
+        "substitutionImpact": "Milder tang; close enough for a first try."
+      },
+      {
+        "name": "Cassava dough",
+        "metric": "150 g",
+        "cups": "¾ cup",
+        "substitution": "More corn dough",
+        "substitutionImpact": "Less stretch, still soft and tasty."
+      },
+      {
+        "name": "Salted water",
+        "metric": "500 ml",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Mix doughs with salted water into a smooth, thick paste.", "minutes": 8, "why": null },
-      { "text": "Cook on medium heat, stirring constantly, until it pulls from the pot and turns translucent.", "minutes": 25, "why": "Constant stirring is the whole trick — stop and it goes lumpy." },
-      { "text": "Shape into balls and rest covered 5 minutes before serving.", "minutes": 8, "why": null }
+      {
+        "text": "Mix doughs with salted water into a smooth, thick paste.",
+        "minutes": 8,
+        "why": null
+      },
+      {
+        "text": "Cook on medium heat, stirring constantly, until it pulls from the pot and turns translucent.",
+        "minutes": 25,
+        "why": "Constant stirring is the whole trick — stop and it goes lumpy."
+      },
+      {
+        "text": "Shape into balls and rest covered 5 minutes before serving.",
+        "minutes": 8,
+        "why": null
+      }
     ],
-    "pairings": ["groundnut-stew", "chicken-yassa"]
+    "pairings": [
+      "groundnut-stew",
+      "chicken-yassa"
+    ]
   },
   {
     "id": "kelewele",
@@ -463,25 +1222,76 @@
     "cookMinutes": 15,
     "servingsDefault": 4,
     "difficulty": "Easy",
-    "dietaryTags": ["Vegan", "Gluten-free"],
+    "dietaryTags": [
+      "Vegan",
+      "Gluten-free"
+    ],
     "adaptationNote": "Naturally vegan — a great starter or party snack on its own.",
     "blurb": "Spicy fried plantain cubes tossed with ginger and chilli — Accra's famous night-market snack, crisp outside and caramel-sweet inside.",
     "keyIngredients": [
-      { "name": "Ripe plantain", "photo": "🍌" },
-      { "name": "Fresh ginger", "photo": "🫚" },
-      { "name": "Chilli & nutmeg", "photo": "🌶️" }
+      {
+        "name": "Ripe plantain",
+        "photo": "🍌"
+      },
+      {
+        "name": "Fresh ginger",
+        "photo": "🫚"
+      },
+      {
+        "name": "Chilli & nutmeg",
+        "photo": "🌶️"
+      }
     ],
     "ingredients": [
-      { "name": "Ripe (spotted) plantains", "metric": "3 large", "cups": "3 large", "substitution": "Very ripe bananas in desperation", "substitutionImpact": "Much softer and sweeter — fry briefly, honest downgrade." },
-      { "name": "Grated ginger", "metric": "1 tbsp", "cups": "1 tbsp", "substitution": "1 tsp ground ginger", "substitutionImpact": "Less fiery freshness, still warm." },
-      { "name": "Ground chilli + nutmeg + salt", "metric": "1 tsp + ½ tsp + 1 tsp", "cups": "1 tsp + ½ tsp + 1 tsp", "substitution": null, "substitutionImpact": null },
-      { "name": "Oil for frying", "metric": "500 ml", "cups": "2 cups", "substitution": null, "substitutionImpact": null }
+      {
+        "name": "Ripe (spotted) plantains",
+        "metric": "3 large",
+        "cups": "3 large",
+        "substitution": "Very ripe bananas in desperation",
+        "substitutionImpact": "Much softer and sweeter — fry briefly, honest downgrade."
+      },
+      {
+        "name": "Grated ginger",
+        "metric": "1 tbsp",
+        "cups": "1 tbsp",
+        "substitution": "1 tsp ground ginger",
+        "substitutionImpact": "Less fiery freshness, still warm."
+      },
+      {
+        "name": "Ground chilli + nutmeg + salt",
+        "metric": "1 tsp + ½ tsp + 1 tsp",
+        "cups": "1 tsp + ½ tsp + 1 tsp",
+        "substitution": null,
+        "substitutionImpact": null
+      },
+      {
+        "name": "Oil for frying",
+        "metric": "500 ml",
+        "cups": "2 cups",
+        "substitution": null,
+        "substitutionImpact": null
+      }
     ],
     "steps": [
-      { "text": "Cube plantain and toss with ginger, spices and salt. Rest 10 minutes.", "minutes": 12, "why": "Resting lets the spice coat every cube instead of sliding off in the oil." },
-      { "text": "Fry in hot oil until deep golden and caramelised at the edges.", "minutes": 10, "why": null },
-      { "text": "Drain on paper and serve hot, with roasted peanuts if you like.", "minutes": 3, "why": null }
+      {
+        "text": "Cube plantain and toss with ginger, spices and salt. Rest 10 minutes.",
+        "minutes": 12,
+        "why": "Resting lets the spice coat every cube instead of sliding off in the oil."
+      },
+      {
+        "text": "Fry in hot oil until deep golden and caramelised at the edges.",
+        "minutes": 10,
+        "why": null
+      },
+      {
+        "text": "Drain on paper and serve hot, with roasted peanuts if you like.",
+        "minutes": 3,
+        "why": null
+      }
     ],
-    "pairings": ["waakye", "chicken-yassa"]
+    "pairings": [
+      "waakye",
+      "chicken-yassa"
+    ]
   }
 ]

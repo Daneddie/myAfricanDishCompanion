@@ -120,11 +120,11 @@ These are possible paths to sustainability for discussion only. None is a commit
 - **Commerce / affiliate**: relevant ingredient and kitchen-product referrals where commercially appropriate.
 - **Premium content**: curated collections, regional culinary journeys or advanced cooking experiences.
 
-## 11. Open Questions
+## 11. Open Questions — Decided for V1 (locked)
 
-- Should difficulty/time estimates be fixed per dish, or adjustable based on user-selected serving size?
-- How should conflicting regional/family variations of the same dish (e.g., Jollof) be handled as the library grows?
-- Should the shopping list eventually combine/sum overlapping ingredients across dishes, or stay grouped by dish (as in V1) for simplicity?
+- **Fixed time/difficulty:** FIXED per dish for V1. `prepMinutes` + `cookMinutes` + `difficulty` do not scale with servings. Servings shown as default only (`servingsDefault`). Revisit serving-scaler post-V1.
+- **Regional/family variations:** INCLUSIVE multi-country listing for V1. Contested dishes list all countries involved in `country` (e.g. Jollof: Nigeria / Ghana / Senegal; Egusi: Nigeria / Ghana / Cameroon; Fufu: Ghana / Nigeria; Groundnut/Mafé: Senegal / Mali). No single-origin claims. Family-level variations deferred post-V1.
+- **Shopping list:** GROUPED BY DISH for V1 (not summed/combined). Code implements grouped tick-off list. Summing overlapping ingredients deferred to post-V1 per §10.
 
 ## 12. Technical Decision Note
 

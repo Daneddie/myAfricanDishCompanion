@@ -166,7 +166,7 @@ function bumpMetric(key) {
 }
 
 function initCountries() {
-  const countries = [...new Set(DISHES.map((d) => d.country))].sort();
+  const countries = [...new Set(DISHES.flatMap((d) => d.country.split('/').map((s) => s.trim())))].sort();
   const sel = $('countryFilter');
   countries.forEach((c) => {
     const o = document.createElement('option');
@@ -244,7 +244,7 @@ function filteredDishes() {
   const country = $('countryFilter').value;
   return DISHES.filter((d) => {
     if (cat && d.category !== cat) return false;
-    if (country && d.country !== country) return false;
+    if (country && !d.country.split('/').map((s) => s.trim()).includes(country)) return false;
     if (!q) return true;
     const hay = (d.name + ' ' + d.country + ' ' + d.ingredients.map((i) => i.name).join(' ') + ' ' + keyIngNames(d).join(' ')).toLowerCase();
     return hay.includes(q);
