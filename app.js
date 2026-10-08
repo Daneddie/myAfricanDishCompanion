@@ -24,9 +24,13 @@ const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE)
 let apiAvailable = false;
 let sessionUser = null;
 
+const API_TIMEOUT_MS = 30000; // Render free cold start: 30-60s wake
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function api(path, options = {}) {
+  const timeoutMs = options.timeoutMs || API_TIMEOUT_MS;
   const ctrl = new AbortController();
-  const timer = setTimeout(() => ctrl.abort(), 8000);
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     const res = await fetch(API_BASE + path, {
       credentials: 'include',
@@ -42,10 +46,22 @@ async function api(path, options = {}) {
   }
 }
 
+function isWakeableError(e) {
+  return e && (e.name === 'AbortError' || e.message === 'Failed to fetch');
+}
+
 async function refreshSession() {
   const wasLoggedIn = !!sessionUser;
   try {
-    const { ok, data } = await api('/api/me');
+    let resp;
+    try {
+      resp = await api('/api/me');
+    } catch (e) {
+      if (!isWakeableError(e)) throw e;
+      await sleep(3000); // one silent retry: server may be mid-wake
+      resp = await api('/api/me');
+    }
+    const { ok, data } = resp;
     apiAvailable = true;
     sessionUser = ok && data && data.user ? data.user : null;
   } catch (e) {
@@ -560,7 +576,7 @@ function renderAccount() {
       showToast(isSignup ? 'Account created — welcome! 🎉' : 'Welcome back! 🎉');
     } catch (ex) {
       err.textContent = ex.message === 'Failed to fetch' || ex.name === 'AbortError'
-        ? 'Cannot reach the account server. Is the API running?'
+        ? 'Server is waking up (free tier sleeps) — wait 30 seconds and try again.'
         : ex.message;
       err.hidden = false;
     }
