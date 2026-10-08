@@ -8,7 +8,13 @@ if (!process.env.DATABASE_URL) {
 }
 
 const dialect = new PostgresDialect({
-  pool: new Pool({ connectionString: process.env.DATABASE_URL }),
+  pool: new Pool({
+    connectionString: process.env.DATABASE_URL,
+    // Supabase/Neon require TLS; plain localhost dev does not.
+    ssl: /localhost|127\.0\.0\.1/.test(process.env.DATABASE_URL || '')
+      ? false
+      : { rejectUnauthorized: false },
+  }),
 });
 
 export const db = new Kysely({ dialect });
