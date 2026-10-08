@@ -15,11 +15,13 @@ let state = {
 
 const $ = (id) => document.getElementById(id);
 
-// Backend API (B1). Override with window.MAD_API_BASE before app.js loads.
-// Local dev uses localhost; anywhere else defaults to the production API.
-const PROD_API_BASE = 'https://mad-api-uifs.onrender.com';
-const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE)
-  || (/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? 'http://localhost:4000' : PROD_API_BASE)
+// Backend API: same-origin '/api' on hosted site (Netlify proxies to Render,
+// keeping session cookies first-party), localhost:4000 for local dev.
+// Override with window.MAD_API_BASE before app.js loads.
+const PROD_API_BASE = '';
+const API_BASE = ((typeof window !== 'undefined' && window.MAD_API_BASE) != null
+  ? window.MAD_API_BASE
+  : (/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? 'http://localhost:4000' : PROD_API_BASE)
 ).replace(/\/$/, '');
 let apiAvailable = false;
 let sessionUser = null;
