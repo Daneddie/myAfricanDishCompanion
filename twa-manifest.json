@@ -1,0 +1,15 @@
+{
+  "packageId": "com.madish.app",
+  "host": "myafricandishcompanion.netlify.app",
+  "name": "MyAfricanDishCompanion",
+  "launcherName": "MADish",
+  "display": "standalone",
+  "themeColor": "#2e1f12",
+  "backgroundColor": "#fff8f0",
+  "startUrl": "/index.html",
+  "iconUrl": "https://myafricandishcompanion.netlify.app/assets/icons/icon-512.png",
+  "maskableIconUrl": "https://myafricandishcompanion.netlify.app/assets/icons/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": { "path": "./android.keystore", "alias": "android" },
+  "generatorApp": "bubblewrap-cli"
+}
