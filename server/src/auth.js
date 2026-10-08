@@ -40,4 +40,10 @@ export const auth = betterAuth({
     },
   },
   trustedOrigins: (process.env.TRUSTED_ORIGINS || '').split(',').filter(Boolean),
+  // Frontend (netlify.app) + API (onrender.com) are different sites:
+  // session cookie must be SameSite=None; Secure or /api/me won't see it.
+  advanced: {
+    crossSubDomainCookies: { enabled: true },
+    useSecureCookies: true,
+  },
 });
