@@ -1,5 +1,5 @@
 /* MyAfricanDishCompanion service worker — offline-first kitchen PWA. */
-const CACHE = 'mad-v1';
+const CACHE = 'mad-v2';
 const CORE = [
   './',
   './index.html',
